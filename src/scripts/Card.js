@@ -15,6 +15,12 @@ class Card {
     cardDiv.style.backgroundSize = `${this.puzzle.width}px ${this.puzzle.height}px`;
     cardDiv.style.border = '1px solid white';
     cardDiv.style.position = 'absolute';
+
+    // cardDiv.addEventListener('click', function() {
+      
+    //   const currentCellIndex = this.puzzle.findPosition(this.index);
+    //   const emptyCardIndex = this.puzzle.findEmpty();
+    // };
   }
   //lets add an event listener on the cards
 }
