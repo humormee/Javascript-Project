@@ -1,48 +1,39 @@
 {
   "name": "javascript_project",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Image Shift is a sliding puzzle game. Sample images are broken up into the specified number of cards, and randomly shuffled. Players try to complete the puzzle in the least number of moves. Players have the ability to add filters to the image they are playing on.",
+  "main": "postcss.config.js",
+  "dependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "babel-loader": "^8.2.2",
+    "core-js": "^3.15.2",
+    "css-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.1.0",
+    "regenerator-runtime": "^0.13.9",
+    "sass": "^1.36.0",
+    "sass-loader": "^12.1.0",
+    "webpack": "^5.46.0",
+    "webpack-cli": "^4.7.2"
+  },
+  "devDependencies": {},
   "browserslist": [
-    "last 1 version",
-    "> 1%",
-    "maintained node versions",
-    "not dead"
+    "defaults"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "NODE_ENV=development webpack-dev-server --config webpack.dev.js ",
-    "watch": "NODE_ENV=development webpack --watch --config webpack.dev.js ",
-    "build": "NODE_ENV=production webpack --config webpack.prod.js"
+    "watch": "webpack --watch --mode=development",
+    "build": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/humormee/Javascript-Project.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/humormee/Javascript-Project/issues"
   },
-  "homepage": "https://github.com/humormee/Javascript-Project#readme",
-  "devDependencies": {
-    "@babel/core": "^7.14.8",
-    "@babel/plugin-proposal-optional-chaining": "^7.14.5",
-    "@babel/preset-env": "^7.14.8",
-    "autoprefixer": "^10.3.1",
-    "babel-loader": "^8.2.2",
-    "css-loader": "^6.2.0",
-    "fibers": "^5.0.0",
-    "file-loader": "^6.2.0",
-    "mini-css-extract-plugin": "^2.1.0",
-    "postcss-loader": "^6.1.1",
-    "sass": "^1.36.0",
-    "sass-loader": "^12.1.0",
-    "style-loader": "^3.2.1",
-    "url-loader": "^4.1.1",
-    "webpack": "^5.46.0",
-    "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2",
-    "webpack-merge": "^5.8.0"
-  }
+  "homepage": "https://github.com/humormee/Javascript-Project#readme"
 }
