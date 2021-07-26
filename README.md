@@ -44,3 +44,5 @@ Thurday:
 
 Friday Morning:
 * finish up anything remaining / css
+* deploy to github pages
+* finish readme
