@@ -6,6 +6,11 @@ let cardsArray = [];
 let emptyCard = 8;
 let isSolved = false;
 
+let emptyCard = {
+  x: null,
+  y: null
+}
+
 let mouse = {
   x: null,
   y: null
@@ -19,15 +24,11 @@ function setBoard() {
   
 }
 
-
+//let's set an event listener on the canvas
 canvas.onmousemove = function(event) {
   mouse.x = Math.floor((event.pageX - event.offsetLeft) / cardSize);
   mouse.y = Math.floor((event.pageY - event.offsetTop) / cardSize);
 }
-
-// canvas.onclick = function(event) {
-//   if ()
-// }
 
 
 
@@ -35,13 +36,12 @@ let img = new Image();
 img.src = 'http://www.brucealderman.info/Images/dimetrodon.jpg';
 img.addEventListener('load', drawCards, false);
 
-// function drawImage(){
-//   let imageWidth = png.width;
-//   let imageHeight = png.height;
-//   const data = ctx.getImageData(0, 0, imageWidth, imageHeight);
-//   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-//   class Particle {
-//     constructor(x, y, color, size)
-//   }
-// }
+function drawCards(){
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for(i = 0; i < 9; i++) {
+    
+  }
+  let imageWidth = image.width;
+  let imageHeight = image.height;
+  const data = ctx.getImageData(0, 0, imageWidth, imageHeight);
+}
