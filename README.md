@@ -11,10 +11,10 @@ Users of the app will have the ability to:
     * cards are randomly shuffled in n * m rectangle to be rearranged by the user
 * compare their moves to an algorithm for finding the least number of moves
 * interact with visualizations of image
-* can choose different color schemes of the picture
+* choose different color schemes of the picture
 
 ### Bonus:
-* can play the sliding puzzle game with the edited version of the picture
+* play the sliding puzzle game with the edited version of the picture
 
 ## Technologies, Libraries, APIs
 
