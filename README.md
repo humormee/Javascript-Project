@@ -32,19 +32,21 @@ This app uses the following technologies
 
 Tuesday:
 * render sample pictures onto canvas if not already rendering
-* divide the image into cards with the ability to slide the cards
-* if time allows, start implementation of algorithm that finds the optimal path (with A^*)
-https://www.cs.princeton.edu/courses/archive/spring20/cos226/assignments/8puzzle/specification.php
+* divide the image into cards with the ability to slide and switch with eachother
+
 
 Wednesday:
-* finish implementation of algorithm
-* if time allows, begin implementing visual animations
+* finish the functionality of card shuffling
+* start implementation of algorithm that finds the optimal path (with A^*)
+https://www.cs.princeton.edu/courses/archive/spring20/cos226/assignments/8puzzle/specification.php
 
 Thurday:
-* complete visual animations
+* finish implementation of algorithm
+* start functionality of selecting different color schemes
 * if time allows, work on css
 
 Friday Morning:
-* finish up anything remaining / css
+* polish all existing functionality
+* work on css
 * deploy to github pages
 * finish readme
