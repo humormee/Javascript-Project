@@ -6,13 +6,15 @@ Image Destruct is a tool for animating pictures. The app gives life to images. U
 
 Users of the app will have the ability to:
 
-* convert image pixels into nodes for manipulation
 * play a classic slider puzzle game
     * images are divided into many "cards" that compromise of the entire image
     * cards are randomly shuffled in n * m rectangle to be rearranged by the user
 * compare their moves to an algorithm for finding the least number of moves
-    * users can compare their number of moves compared to an algorithms
-* trigger animations with mouseover events
+* interact with visualizations of image
+* can choose different color schemes of the picture
+
+# Bonus:
+* can play the sliding puzzle game with the edited version of the picture
 
 ## Technologies, Libraries, APIs
 
