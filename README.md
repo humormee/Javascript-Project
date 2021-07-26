@@ -7,15 +7,16 @@ Image Shift is a sliding puzzle game. Sample images are broken up into the speci
 
 Users of the app will have the ability to:
 
-* play a classic slider puzzle game
-    * images are divided into many "cards" that compromise of the entire image
-    * cards are randomly shuffled in an m * m rectangle to be rearranged by the user
-* compare their moves to an algorithm for finding the least number of moves
-* animate moves of the algorithm
-* choose different color schemes of the picture
+* view the images that are divided into many "cards" that compromise of the entire image
+* move cards around the board by switching places with the empty space
+* reset the cards so they are randomly shuffled in an m * m square
+* time themselves and keep track of their number of moves
 
 ### Bonus:
 * play the sliding puzzle game with the edited version of the picture
+* compare their moves to an algorithm for finding the least number of moves
+* choose different color schemes of the picture
+
 
 In addition, this project will include:
 * An **About** modal that describes any background of the app as well as how to get started
@@ -45,12 +46,11 @@ This app uses the following technologies
 
 ### Wednesday
 * finish the functionality of card shuffling
-* start implementation of algorithm that finds the optimal path (with A^*)
-https://www.cs.princeton.edu/courses/archive/spring20/cos226/assignments/8puzzle/specification.php
+* start functionality of reseting board by randomizing cards
 
 ### Thurday
-* finish implementation of algorithm
-* start functionality of selecting different color schemes
+* finish functionality of reseting board
+* add total number of moves and timer
 * if time allows, work on css
 
 ### Friday
