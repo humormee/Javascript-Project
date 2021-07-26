@@ -13,7 +13,7 @@ Users of the app will have the ability to:
 * interact with visualizations of image
 * can choose different color schemes of the picture
 
-# Bonus:
+### Bonus:
 * can play the sliding puzzle game with the edited version of the picture
 
 ## Technologies, Libraries, APIs
