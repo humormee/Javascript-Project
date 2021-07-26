@@ -16,6 +16,9 @@ Users of the app will have the ability to:
 ### Bonus:
 * play the sliding puzzle game with the edited version of the picture
 
+## Wireframes
+![Screen Shot 2021-07-25 at 9 31 28 PM (2)](https://user-images.githubusercontent.com/42757012/126925309-2bbabbda-89a9-4b0f-84fa-3fd234b6d688.png)
+
 ## Technologies, Libraries, APIs
 
 This app uses the following technologies
@@ -50,3 +53,4 @@ Friday Morning:
 * work on css
 * deploy to github pages
 * finish readme
+
