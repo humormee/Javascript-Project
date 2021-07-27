@@ -1,3 +1,3 @@
-import Canvas from "./Canvas";
+import { drawCards } from "./Canvas";
 debugger
-Canvas.drawCards();
+drawCards();

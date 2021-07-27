@@ -1,38 +1,13 @@
 import Card from "./Card";
 import { lizard } from "../assets/images/lizard";
-// class Puzzle {
-//   constructor(el, imageSrc, width, dimension = 3){
 
-//   }
-// }
-
-let img = new Image();
-debugger
-// img.crossOrigin = "Anonymous"
-img.src = lizard;
-img.addEventListener('load', drawCards, false);
-
-// const canvas = document.getElementById("puzzle");
-const canvas = document.createElement('canvas');
-debugger
-const ctx = canvas.getContext("2d");
-let boardSize = canvas.width;
-let cardSize = boardSize / 3;
-let cardsArray;
-// let emptyCard = 8;
-let isSolved = false;
-
-let emptyCard = {
-  x: null,
-  y: null
-}
-
-let mouse = {
-  x: null,
-  y: null
-}
-
-function setBoard() {
+export default class Canvas {
+  constructor(el, imageSrc, width, dimension = 3){
+    this.imageSrc = lizard;
+    
+  }
+ 
+  setBoard() {
   cardsArray = new Array(3);
   //initialize cards Arr with x, y positions from 0,0 to 2,2
   for (let i = 0; i < 3; i++) {
@@ -50,7 +25,7 @@ function setBoard() {
   isSolved = false;
 }
 
-function drawCards(){
+  drawCards(){
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   for(let i = 0; i < 3; i++) {
     for(let j = 0; j < 3; j++) {
@@ -67,23 +42,15 @@ function drawCards(){
   const data = ctx.getImageData(0, 0, imageWidth, imageHeight);
 }
 
+  findEmpty() {
 
-//let's set an event listener on the canvas
-canvas.onmousemove = function(event) {
-  mouse.x = Math.floor((event.pageX - event.offsetLeft) / cardSize);
-  mouse.y = Math.floor((event.pageY - event.offsetTop) / cardSize);
-}
+  }
 
+  findPosition(index) {
 
-
-function findEmpty() {
+  }
 
 }
 
-function findPosition(index) {
 
-}
-
-setBoard();
-
-export default Canvas;
+// export default Canvas;
