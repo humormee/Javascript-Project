@@ -16,6 +16,21 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log("webpack running");
   let puzzle = new Puzzle(canvas, img);
   puzzle.drawCards();
+
+  canvas.onclick = function(e) {
+    debugger
+    let rect = canvas.getBoundingClientRect();
+
+    let cardSize = document.getElementById('puzzle').width / 3;
+
+    let clickLoc = {
+      x: Math.floor((e.clientX - rect.left)/cardSize),
+      y: Math.floor((e.clientY - rect.top)/cardSize)
+    }
+
+    console.log(clickLoc);
+    console.log();
+  }
 }) 
 
 // debugger

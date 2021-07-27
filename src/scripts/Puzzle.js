@@ -2,10 +2,7 @@ import Card from "./Card";
 import { lizard } from "../assets/images/lizard";
 
 export default class Puzzle {
-  // constructor(el, imageSrc, width, dimension = 3){
-  //   this.imageSrc = lizard;
-    
-  // }
+ 
   constructor(canvas, img){
     this.canvas = canvas;
     this.ctx = canvas.getContext("2d");
@@ -14,6 +11,10 @@ export default class Puzzle {
     this.setBoard();
     this.isSolved = false;
     this.img = img;
+  }
+
+  clickCard(){
+    
   }
  
   setBoard() {
@@ -55,6 +56,10 @@ export default class Puzzle {
     let imageWidth = this.img.width;
     let imageHeight = this.img.height;
     const data = this.ctx.getImageData(0, 0, imageWidth, imageHeight);
+  }
+
+  switchCards() {
+
   }
 
   findEmpty() {
