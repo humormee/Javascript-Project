@@ -13,9 +13,7 @@ export default class Puzzle {
     this.img = img;
   }
 
-  clickCard(){
-    
-  }
+  
  
   setBoard() {
     debugger
@@ -58,8 +56,8 @@ export default class Puzzle {
     const data = this.ctx.getImageData(0, 0, imageWidth, imageHeight);
   }
 
-  switchCards() {
-
+  switchCards(clickLoc) {
+    
   }
 
   findEmpty() {
