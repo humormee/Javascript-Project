@@ -57,7 +57,13 @@ export default class Puzzle {
   }
 
   switchCards(clickLoc) {
-    
+    let isAdjacent = (Math.abs(clickLoc.x - this.emptyCard.x) <= 1 && Math.abs(clickLoc.y - this.emptyCard.y) <= 1)
+    // debugger
+    let isDiagonal = (Math.abs(clickLoc.x - this.emptyCard.x) == 1 && Math.abs(clickLoc.y - this.emptyCard.y) == 1)
+    debugger
+    if(isAdjacent && !isDiagonal){
+      console.log("empty next to click yep")
+    }
   }
 
   findEmpty() {

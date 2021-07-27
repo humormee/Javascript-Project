@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.puzzle = puzzle;
   debugger
   canvas.addEventListener('click', function(e) {
-    debugger
+    // debugger
     let rect = canvas.getBoundingClientRect();
 
     let cardSize = document.getElementById('puzzle').width / 3;
@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.puzzle.switchCards(clickLoc);
-    console.log(clickLoc);
-    console.log(window.puzzle.cardsArray);
+    // console.log(clickLoc);
+    // console.log(window.puzzle.cardsArray);
   }, false)
   // canvas.onclick = function(e) {
   //   debugger
