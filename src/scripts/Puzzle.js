@@ -5,6 +5,7 @@ export default class Puzzle {
  
   constructor(canvas, img){
     this.canvas = canvas;
+    this.img = img;
     this.ctx = canvas.getContext("2d");
     this.imageSrc = lizard;
     this.emptyCard = {
@@ -13,7 +14,7 @@ export default class Puzzle {
     };
     this.setBoard();
     this.isSolved = false;
-    this.img = img;
+    
   }
 
   
@@ -25,7 +26,8 @@ export default class Puzzle {
     for (let i = 0; i < 3; i++) {
       this.cardsArray[i] = new Array(2)
       for (let j = 0; j < 3; j++) {
-        this.cardsArray[i][j] = new Card(this.canvas, [2 - i, 2 - j], [i, j])
+        debugger
+        this.cardsArray[i][j] = new Card(this.img, this.canvas, [2 - i, 2 - j], [i, j])
         // this.cardsArray[i][j] = {
         //   baseX: i,
         //   baseY: j,
@@ -46,18 +48,15 @@ export default class Puzzle {
 
     for(let i = 0; i < 3; i++) {
       for(let j = 0; j < 3; j++) {
-        // debugger
-        // let card = new Card(this.canvas, [i, j], cardSize, cardSize)
-        
-        debugger
+       
         let baseX = this.cardsArray[i][j].baseIndex[0];
         let baseY = this.cardsArray[i][j].baseIndex[1];
         let x = this.cardsArray[i][j].currentIndex[0];
         let y = this.cardsArray[i][j].currentIndex[1];
 
         if(i !== this.emptyCard.x || j !== this.emptyCard.y) {
-          // debugger
-          this.ctx.drawImage(this.img, baseX * cardSize, baseY * cardSize, cardSize, cardSize, i * cardSize, j * cardSize, cardSize, cardSize);
+          this.cardsArray[i][j].drawCard();
+          // this.ctx.drawImage(this.img, baseX * cardSize, baseY * cardSize, cardSize, cardSize, i * cardSize, j * cardSize, cardSize, cardSize);
         }
       }
     }

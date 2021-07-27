@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   img.setAttribute(`src`, `data:image/jpg;base64, ${lizard}`);
   ctx.drawImage(img, 0, 0, boardSize, boardSize);
   console.log("webpack running");
+  debugger
   let puzzle = new Puzzle(canvas, img);
   puzzle.drawCards();
   window.puzzle = puzzle;

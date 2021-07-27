@@ -1,7 +1,9 @@
 import { lizard } from "../assets/images/lizard";
 
 export default class Card {
-  constructor(canvasEl, currentIndex, baseIndex) {
+  constructor(img, canvasEl, currentIndex, baseIndex) {
+    debugger
+    this.img = img;
     this.isEmtpy = false;
     this.canvasEl = canvasEl;
     this.ctx = canvasEl.getContext("2d")
@@ -10,8 +12,9 @@ export default class Card {
     this.size = canvasEl.width / 3;
 
     let el = this.createCard();
-    // debugger
-    this.canvasEl.appendChild(el)
+    this.canvasEl.appendChild(el);
+
+
   }
 
   createCard() {
@@ -25,6 +28,12 @@ export default class Card {
   }
 
   drawCard() {
-    this.ctx.drawImage();
+    let size = this.size
+    let baseX = this.baseIndex[0];
+    let baseY = this.baseIndex[1];
+    let i = this.currentIndex[0];
+    let j = this.currentIndex[1];
+    debugger
+    this.ctx.drawImage(this.img, baseX * size, baseY * size, size, size, i * size, j * size, size, size);
   }
 }
