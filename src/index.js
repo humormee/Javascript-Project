@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.puzzle = puzzle;
   debugger
   canvas.addEventListener('click', function(e) {
-    // debugger
     let rect = canvas.getBoundingClientRect();
 
     let cardSize = document.getElementById('puzzle').width / 3;
@@ -31,24 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.puzzle.switchCards(clickLoc);
-    // console.log(clickLoc);
-    // console.log(window.puzzle.cardsArray);
+
   }, false)
-  // canvas.onclick = function(e) {
-  //   debugger
-  //   let rect = canvas.getBoundingClientRect();
 
-  //   let cardSize = document.getElementById('puzzle').width / 3;
-
-  //   let clickLoc = {
-  //     x: Math.floor((e.clientX - rect.left)/cardSize),
-  //     y: Math.floor((e.clientY - rect.top)/cardSize)
-  //   }
-
-  //   console.log(clickLoc);
-  //   console.log();
-  // }
 }) 
-
-// debugger
-// Puzzle.drawCards()

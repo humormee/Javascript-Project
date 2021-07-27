@@ -1,8 +1,8 @@
-import { lizard } from "../assets/images/lizard";
+// import { lizard } from "../assets/images/lizard";
 
 export default class Card {
   constructor(img, canvasEl, currentIndex, baseIndex) {
-    debugger
+    
     this.img = img;
     this.isEmtpy = false;
     this.canvasEl = canvasEl;
@@ -21,7 +21,7 @@ export default class Card {
     // this.canvasEl.appendChild()'
     // debugger
     const cardDiv = document.createElement('div');
-    cardDiv.style.backgroundSize = `${this.width}px ${this.height}px`;
+    cardDiv.style.backgroundSize = `${this.size}px ${this.size}px`;
     cardDiv.style.border = '1px solid white';
     cardDiv.style.position = 'absolute';
     return cardDiv;
@@ -34,6 +34,6 @@ export default class Card {
     let i = this.currentIndex[0];
     let j = this.currentIndex[1];
     debugger
-    this.ctx.drawImage(this.img, i * size, j * size, size, size, baseX * size, baseY * size, size, size);
+    this.ctx.drawImage(this.img, baseX * size, baseY * size, size, size, i * size, j * size, size, size);
   }
 }

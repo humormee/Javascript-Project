@@ -26,7 +26,7 @@ export default class Puzzle {
     for (let i = 0; i < 3; i++) {
       this.cardsArray[i] = new Array(2)
       for (let j = 0; j < 3; j++) {
-        debugger
+        
         this.cardsArray[i][j] = new Card(this.img, this.canvas, [2 - i, 2 - j], [i, j])
         // this.cardsArray[i][j] = {
         //   baseX: i,
@@ -44,15 +44,15 @@ export default class Puzzle {
 
   drawCards(){
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    let cardSize = this.canvas.width / 3;
+    // let cardSize = this.canvas.width / 3;
 
     for(let i = 0; i < 3; i++) {
       for(let j = 0; j < 3; j++) {
        
-        let baseX = this.cardsArray[i][j].baseIndex[0];
-        let baseY = this.cardsArray[i][j].baseIndex[1];
-        let x = this.cardsArray[i][j].currentIndex[0];
-        let y = this.cardsArray[i][j].currentIndex[1];
+        // let baseX = this.cardsArray[i][j].baseIndex[0];
+        // let baseY = this.cardsArray[i][j].baseIndex[1];
+        // let x = this.cardsArray[i][j].currentIndex[0];
+        // let y = this.cardsArray[i][j].currentIndex[1];
 
         if(i !== this.emptyCard.x || j !== this.emptyCard.y) {
           this.cardsArray[i][j].drawCard();
@@ -60,7 +60,7 @@ export default class Puzzle {
         }
       }
     }
-    debugger
+    
     let imageWidth = this.img.width;
     let imageHeight = this.img.height;
     const data = this.ctx.getImageData(0, 0, imageWidth, imageHeight);
@@ -68,9 +68,9 @@ export default class Puzzle {
 
   switchCards(clickLoc) {
     let isAdjacent = (Math.abs(clickLoc.x - this.emptyCard.x) <= 1 && Math.abs(clickLoc.y - this.emptyCard.y) <= 1)
-    debugger
+    
     let isDiagonal = (Math.abs(clickLoc.x - this.emptyCard.x) == 1 && Math.abs(clickLoc.y - this.emptyCard.y) == 1)
-    debugger
+    // debugger
     if(isAdjacent && !isDiagonal){
       let temp = clickLoc;
       this.cardsArray[clickLoc.x][clickLoc.y] = this.emptyCard;
