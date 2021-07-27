@@ -34,6 +34,6 @@ export default class Card {
     let i = this.currentIndex[0];
     let j = this.currentIndex[1];
     debugger
-    this.ctx.drawImage(this.img, baseX * size, baseY * size, size, size, i * size, j * size, size, size);
+    this.ctx.drawImage(this.img, i * size, j * size, size, size, baseX * size, baseY * size, size, size);
   }
 }
