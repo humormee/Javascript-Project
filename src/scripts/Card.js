@@ -6,8 +6,9 @@ export default class Card {
     this.height = height;
     this.width = width
 
-    this.createCard();
-    // this.canvasEl.appendChild(el)
+    let el = this.createCard();
+    debugger
+    this.canvasEl.appendChild(el)
   }
 
   createCard() {
@@ -17,6 +18,6 @@ export default class Card {
     cardDiv.style.backgroundSize = `${this.width}px ${this.height}px`;
     cardDiv.style.border = '1px solid white';
     cardDiv.style.position = 'absolute';
-
+    return cardDiv;
   }
 }
