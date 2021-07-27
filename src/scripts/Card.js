@@ -1,26 +1,22 @@
-class Card {
-  constructor(puzzle, index) {
+export default class Card {
+  constructor(canvasEl, index, height, width) {
     this.isEmtpy = false;
+    this.canvasEl = canvasEl;
     this.index = index;
-    this.puzzle = puzzle;
-    this.width = this.puzzle.width / 3;
-    this.height = this.puzzle.height / 3;
+    this.height = height;
+    this.width = width
 
-    this.el = this.createCard();
-    puzzle.el.appendChild(this.el)
+    this.createCard();
+    // this.canvasEl.appendChild(el)
   }
 
   createCard() {
+    // this.canvasEl.appendChild()'
+    debugger
     const cardDiv = document.createElement('div');
-    cardDiv.style.backgroundSize = `${this.puzzle.width}px ${this.puzzle.height}px`;
+    cardDiv.style.backgroundSize = `${this.width}px ${this.height}px`;
     cardDiv.style.border = '1px solid white';
     cardDiv.style.position = 'absolute';
 
-    // cardDiv.addEventListener('click', function() {
-      
-    //   const currentCellIndex = this.puzzle.findPosition(this.index);
-    //   const emptyCardIndex = this.puzzle.findEmpty();
-    // };
   }
-  //lets add an event listener on the cards
 }
