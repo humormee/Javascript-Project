@@ -1,10 +1,13 @@
+import { lizard } from "../assets/images/lizard";
+
 export default class Card {
-  constructor(canvasEl, index, height, width) {
+  constructor(canvasEl, currentIndex, baseIndex) {
     this.isEmtpy = false;
     this.canvasEl = canvasEl;
-    this.index = index;
-    this.height = height;
-    this.width = width
+    this.ctx = canvasEl.getContext("2d")
+    this.currentIndex = currentIndex;
+    this.baseIndex = baseIndex;
+    this.size = canvasEl.width / 3;
 
     let el = this.createCard();
     // debugger
@@ -19,5 +22,9 @@ export default class Card {
     cardDiv.style.border = '1px solid white';
     cardDiv.style.position = 'absolute';
     return cardDiv;
+  }
+
+  drawCard() {
+    this.ctx.drawImage();
   }
 }

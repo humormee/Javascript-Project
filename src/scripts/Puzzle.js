@@ -7,7 +7,10 @@ export default class Puzzle {
     this.canvas = canvas;
     this.ctx = canvas.getContext("2d");
     this.imageSrc = lizard;
-    this.emptyCard = {};
+    this.emptyCard = {
+      x: 0,
+      y: 0
+    };
     this.setBoard();
     this.isSolved = false;
     this.img = img;
@@ -16,21 +19,24 @@ export default class Puzzle {
   
  
   setBoard() {
-    debugger
+    
     this.cardsArray = new Array(3);
     //initialize cards Arr with x, y positions from 0,0 to 2,2
     for (let i = 0; i < 3; i++) {
       this.cardsArray[i] = new Array(2)
       for (let j = 0; j < 3; j++) {
-        this.cardsArray[i][j] = {
-          x: 2 - i,
-          y: 2 - j
-        };
+        this.cardsArray[i][j] = new Card(this.canvas, [2 - i, 2 - j], [i, j])
+        // this.cardsArray[i][j] = {
+        //   baseX: i,
+        //   baseY: j,
+        //   x: 2 - i,
+        //   y: 2 - j
+        // };
       }
     }
 
-    this.emptyCard.x = this.cardsArray[2][2].x;
-    this.emptyCard.y = this.cardsArray[2][2].y;
+    // this.emptyCard.x = this.cardsArray[2][2].x;
+    // this.emptyCard.y = this.cardsArray[2][2].y;
     this.isSolved = false;
   }
 
@@ -42,11 +48,16 @@ export default class Puzzle {
       for(let j = 0; j < 3; j++) {
         // debugger
         // let card = new Card(this.canvas, [i, j], cardSize, cardSize)
-        let x = this.cardsArray[i][j].x;
-        let y = this.cardsArray[i][j].y;
+        
+        debugger
+        let baseX = this.cardsArray[i][j].baseIndex[0];
+        let baseY = this.cardsArray[i][j].baseIndex[1];
+        let x = this.cardsArray[i][j].currentIndex[0];
+        let y = this.cardsArray[i][j].currentIndex[1];
+
         if(i !== this.emptyCard.x || j !== this.emptyCard.y) {
           // debugger
-          this.ctx.drawImage(this.img, x * cardSize, y * cardSize, cardSize, cardSize, i * cardSize, j * cardSize, cardSize, cardSize);
+          this.ctx.drawImage(this.img, baseX * cardSize, baseY * cardSize, cardSize, cardSize, i * cardSize, j * cardSize, cardSize, cardSize);
         }
       }
     }
@@ -66,17 +77,15 @@ export default class Puzzle {
       this.cardsArray[clickLoc.x][clickLoc.y] = this.emptyCard;
       this.emptyCard = temp;
       console.log("empty next to click yep")
-      this.drawCards();
+      
     }
+    this.setBoard();
+    this.drawCards();
 
   }
 
-  findEmpty() {
-
-  }
-
-  findPosition(index) {
-
+  isSolved(){
+    return false;
   }
 
 }
