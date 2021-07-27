@@ -7,13 +7,13 @@ export default class Card {
     this.width = width
 
     let el = this.createCard();
-    debugger
+    // debugger
     this.canvasEl.appendChild(el)
   }
 
   createCard() {
     // this.canvasEl.appendChild()'
-    debugger
+    // debugger
     const cardDiv = document.createElement('div');
     cardDiv.style.backgroundSize = `${this.width}px ${this.height}px`;
     cardDiv.style.border = '1px solid white';

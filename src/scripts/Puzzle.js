@@ -17,6 +17,7 @@ export default class Puzzle {
   }
  
   setBoard() {
+    debugger
     this.cardsArray = new Array(3);
     //initialize cards Arr with x, y positions from 0,0 to 2,2
     for (let i = 0; i < 3; i++) {
@@ -40,11 +41,12 @@ export default class Puzzle {
 
     for(let i = 0; i < 3; i++) {
       for(let j = 0; j < 3; j++) {
-        debugger
-        let card = new Card(this.canvas, [i, j], cardSize, cardSize)
+        // debugger
+        // let card = new Card(this.canvas, [i, j], cardSize, cardSize)
         let x = this.cardsArray[i][j].x;
         let y = this.cardsArray[i][j].y;
-        if(i !== this.emptyCard.x || j !== this.emptyCard.y || this.isSolved === false) {
+        if(i !== this.emptyCard.x || j !== this.emptyCard.y) {
+          // debugger
           this.ctx.drawImage(this.img, x * cardSize, y * cardSize, cardSize, cardSize, i * cardSize, j * cardSize, cardSize, cardSize);
         }
       }
