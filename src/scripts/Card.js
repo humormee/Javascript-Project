@@ -28,15 +28,15 @@ export default class Card {
   }
 
   drawCard() {
-    if(this.isEmtpy) {
-      return;
-    }
+    // if(this.isEmtpy) {
+    //   return;
+    // }
     let size = this.size
     let baseX = this.baseIndex[0];
     let baseY = this.baseIndex[1];
     let i = this.currentIndex[0];
     let j = this.currentIndex[1];
-    debugger
+    
     this.ctx.drawImage(this.img, baseX * size, baseY * size, size, size, i * size, j * size, size, size);
   }
 }

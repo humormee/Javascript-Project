@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   let img = new Image();
   // debugger
-  img.setAttribute(`src`, `data:image/jpg;base64, ${lizard}`);
+  img.setAttribute(`src`, `data:image/jpg;base64, ${cute}`);
   ctx.drawImage(img, 0, 0, boardSize, boardSize);
   console.log("webpack running");
   

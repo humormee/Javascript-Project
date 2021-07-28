@@ -7,7 +7,7 @@ export default class Puzzle {
     this.canvas = canvas;
     this.img = img;
     this.ctx = canvas.getContext("2d");
-    this.imageSrc = lizard;
+    this.imageSrc = cute;
     this.emptyCard = new Card(img, canvas, [0, 0], [0, 0], true);
     this.cardsArray = [];
     this.setBoard();
@@ -31,7 +31,7 @@ export default class Puzzle {
     ];
 
     let randomClick; 
-    debugger
+    
     for(let i = 0; i < 100; i++) {
       randomClick = clickArr[Math.floor(Math.random() * clickArr.length)];
       this.switchCards(randomClick);
@@ -78,18 +78,22 @@ export default class Puzzle {
   }
 
   switchCards(clickLoc) {
+    // let clickLocArr = [clickLoc.x, clickLoc.y];
     let clickedCard = this.cardsArray[clickLoc.x][clickLoc.y];
     let emptyPosX = this.emptyCard.currentIndex[0];
     let emptyPosY = this.emptyCard.currentIndex[1];
+    debugger
 
+    if (clickLoc.x === emptyPosX && clickLoc.y === emptyPosY){
+      return;
+    }
     let isAdjacent = (Math.abs(clickLoc.x - emptyPosX) <= 1 && Math.abs(clickLoc.y - emptyPosY) <= 1)
     
     let isDiagonal = (Math.abs(clickLoc.x - emptyPosX) == 1 && Math.abs(clickLoc.y - emptyPosY) == 1)
     
-    if(isAdjacent && !isDiagonal){
-      debugger
+    if(isAdjacent && !isDiagonal && !clickedCard.isEmpty){
+      
 
-      let temp = clickLoc;
       this.cardsArray[emptyPosX][emptyPosY] = clickedCard;
       this.cardsArray[clickLoc.x][clickLoc.y].currentIndex = this.emptyCard.currentIndex;
       

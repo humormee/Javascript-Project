@@ -3,15 +3,15 @@ import Canvas from './Canvas';
 import { cute } from '../assets/images/cute'
 
 let img = new Image();
-debugger
+
 // img.crossOrigin = "Anonymous"
-img.setAttribute(`src`, `data:image/jpg;base65, ${lizard}`);
+img.setAttribute(`src`, `data:image/jpg;base65, ${cute}`);
 // img.src = lizard;
 img.addEventListener('load', Canvas.drawCards, false);
 
 // const canvas = document.getElementById("puzzle");
 const canvas = document.createElement('canvas');
-debugger
+
 const ctx = canvas.getContext("2d");
 let boardSize = canvas.width;
 let cardSize = boardSize / 3;
@@ -42,5 +42,5 @@ let mouse = {
 
 
 
-debugger
+
 setBoard();
