@@ -8,28 +8,14 @@ export default class Puzzle {
     this.img = img;
     this.ctx = canvas.getContext("2d");
     this.imageSrc = lizard;
-    this.emptyCard = {
-      x: 0,
-      y: 0
-    };
-    this.cardsArray = new Array(3);
-    //initialize cards Arr with x, y positions from 0,0 to 2,2
-    for (let i = 0; i < 3; i++) {
-      this.cardsArray[i] = new Array(2)
-      for (let j = 0; j < 3; j++) {
-        
-        this.cardsArray[i][j] = new Card(this.img, this.canvas, [2 - i, 2 - j], [i, j])
-        // this.cardsArray[i][j] = {
-        //   baseX: i,
-        //   baseY: j,
-        //   x: 2 - i,
-        //   y: 2 - j
-        // };
-      }
-    }
+    this.emptyCard = new Card(img, canvas, [0, 0], [0, 0], true);
+    // this.emptyCard = {
+    //   x: 0,
+    //   y: 0
+    // };
+    this.cardsArray = this.setBoard();
 
-    // this.emptyCard.x = this.cardsArray[2][2].x;
-    // this.emptyCard.y = this.cardsArray[2][2].y;
+    
     this.isSolved = false;
     
   }
@@ -38,42 +24,33 @@ export default class Puzzle {
  
   setBoard() {
     
-    this.cardsArray = new Array(3);
+    let cardsArray = new Array(3);
     //initialize cards Arr with x, y positions from 0,0 to 2,2
     for (let i = 0; i < 3; i++) {
-      this.cardsArray[i] = new Array(2)
+      cardsArray[i] = new Array(2)
       for (let j = 0; j < 3; j++) {
         
-        this.cardsArray[i][j] = new Card(this.img, this.canvas, [2 - i, 2 - j], [i, j])
-        // this.cardsArray[i][j] = {
-        //   baseX: i,
-        //   baseY: j,
-        //   x: 2 - i,
-        //   y: 2 - j
-        // };
+        cardsArray[i][j] = new Card(this.img, this.canvas, [2 - i, 2 - j], [i, j])
+        
       }
     }
-
-    // this.emptyCard.x = this.cardsArray[2][2].x;
-    // this.emptyCard.y = this.cardsArray[2][2].y;
-    this.isSolved = false;
+    cardsArray[2][2] = this.emptyCard;
+    return cardsArray;
   }
 
   drawCards(){
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     // let cardSize = this.canvas.width / 3;
 
+    debugger
     for(let i = 0; i < 3; i++) {
       for(let j = 0; j < 3; j++) {
        
-        // let baseX = this.cardsArray[i][j].baseIndex[0];
-        // let baseY = this.cardsArray[i][j].baseIndex[1];
-        // let x = this.cardsArray[i][j].currentIndex[0];
-        // let y = this.cardsArray[i][j].currentIndex[1];
+
 
         if(i !== this.emptyCard.x || j !== this.emptyCard.y) {
           this.cardsArray[i][j].drawCard();
-          // this.ctx.drawImage(this.img, baseX * cardSize, baseY * cardSize, cardSize, cardSize, i * cardSize, j * cardSize, cardSize, cardSize);
+         
         }
       }
     }
@@ -89,6 +66,7 @@ export default class Puzzle {
     let isDiagonal = (Math.abs(clickLoc.x - this.emptyCard.x) == 1 && Math.abs(clickLoc.y - this.emptyCard.y) == 1)
     // debugger
     if(isAdjacent && !isDiagonal){
+      debugger
       let temp = clickLoc;
       this.cardsArray[clickLoc.x][clickLoc.y] = this.emptyCard;
       this.emptyCard = temp;

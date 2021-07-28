@@ -1,10 +1,10 @@
 // import { lizard } from "../assets/images/lizard";
 
 export default class Card {
-  constructor(img, canvasEl, currentIndex, baseIndex) {
+  constructor(img, canvasEl, currentIndex, baseIndex, isEmpty = false) {
     
     this.img = img;
-    this.isEmtpy = false;
+    this.isEmtpy = isEmpty;
     this.canvasEl = canvasEl;
     this.ctx = canvasEl.getContext("2d")
     this.currentIndex = currentIndex;
@@ -28,6 +28,9 @@ export default class Card {
   }
 
   drawCard() {
+    if(this.isEmtpy) {
+      return;
+    }
     let size = this.size
     let baseX = this.baseIndex[0];
     let baseY = this.baseIndex[1];
