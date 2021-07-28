@@ -9,18 +9,39 @@ export default class Puzzle {
     this.ctx = canvas.getContext("2d");
     this.imageSrc = lizard;
     this.emptyCard = new Card(img, canvas, [0, 0], [0, 0], true);
-    
-    this.cardsArray = this.setBoard();
+    this.cardsArray = [];
+    this.setBoard();
 
     
     this.isSolved = false;
     
   }
 
-  
+  shuffle() {
+    let clickArr = [
+      {x: 0, y: 0},
+      {x: 0, y: 1},
+      {x: 0, y: 2},
+      {x: 1, y: 0},
+      {x: 1, y: 1},
+      {x: 1, y: 2},
+      {x: 2, y: 0},
+      {x: 2, y: 1},
+      {x: 2, y: 2},
+    ];
+
+    let randomClick; 
+    debugger
+    for(let i = 0; i < 100; i++) {
+      randomClick = clickArr[Math.floor(Math.random() * clickArr.length)];
+      this.switchCards(randomClick);
+    }
+
+  }
  
   setBoard() {
     
+
     let cardsArray = new Array(3);
     //initialize cards Arr with x, y positions from 0,0 to 2,2
     for (let i = 0; i < 3; i++) {
@@ -32,14 +53,16 @@ export default class Puzzle {
         
       }
     }
+    
+    this.cardsArray = cardsArray;
     // cardsArray[2][2] = this.emptyCard;
-    return cardsArray;
+    this.shuffle();
   }
 
   drawCards(){
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-    debugger
+    // debugger
     for(let i = 0; i < 3; i++) {
       for(let j = 0; j < 3; j++) {
        

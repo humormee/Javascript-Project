@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.puzzle = puzzle;
   
   canvas.addEventListener('click', function(e) {
-    // debugger
     let rect = canvas.getBoundingClientRect();
 
     let cardSize = document.getElementById('puzzle').width / 3;
