@@ -1,9 +1,11 @@
 import Card from "./Card";
 import { lizard } from "../assets/images/lizard";
-import { cute } from "../assets/images/cute"
+import { cute } from "../assets/images/cute";
+
 export default class Puzzle {
  
   constructor(canvas, img){
+    this.isShuffling = false;
     this.canvas = canvas;
     this.img = img;
     this.ctx = canvas.getContext("2d");
@@ -13,11 +15,13 @@ export default class Puzzle {
     this.setBoard();
 
     
-    this.isSolved = false;
+    // this.isSolved = false;
     
   }
 
   shuffle() {
+    debugger
+    this.isShuffling = true;
     let clickArr = [
       {x: 0, y: 0},
       {x: 0, y: 1},
@@ -36,11 +40,11 @@ export default class Puzzle {
       randomClick = clickArr[Math.floor(Math.random() * clickArr.length)];
       this.switchCards(randomClick);
     }
+    this.isShuffling = false;
 
   }
  
   setBoard() {
-    
 
     let cardsArray = new Array(3);
     //initialize cards Arr with x, y positions from 0,0 to 2,2
@@ -62,7 +66,6 @@ export default class Puzzle {
   drawCards(){
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-    // debugger
     for(let i = 0; i < 3; i++) {
       for(let j = 0; j < 3; j++) {
        
@@ -72,13 +75,13 @@ export default class Puzzle {
       }
     }
     
+    this.isSolved();
     // let imageWidth = this.img.width;
     // let imageHeight = this.img.height;
     // const data = this.ctx.getImageData(0, 0, imageWidth, imageHeight);
   }
 
   switchCards(clickLoc) {
-    // let clickLocArr = [clickLoc.x, clickLoc.y];
     let clickedCard = this.cardsArray[clickLoc.x][clickLoc.y];
     let emptyPosX = this.emptyCard.currentIndex[0];
     let emptyPosY = this.emptyCard.currentIndex[1];
@@ -106,7 +109,20 @@ export default class Puzzle {
   }
 
   isSolved(){
-    return false;
+    debugger
+    if(this.isShuffling){
+      return false;
+    }
+    this.cardsArray.forEach(card => {
+      if(card.currentIndex !== card.baseIndex){
+        debugger
+        return false;
+      }
+    })
+  
+    
+    console.log("congrats you solved it!!")
+    return true;
   }
 
 }

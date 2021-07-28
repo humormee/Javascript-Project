@@ -6,7 +6,7 @@ export default class Card {
     this.img = img;
     this.isEmtpy = isEmpty;
     this.canvasEl = canvasEl;
-    this.ctx = canvasEl.getContext("2d")
+    this.ctx = canvasEl.getContext("2d");
     this.currentIndex = currentIndex;
     this.baseIndex = baseIndex;
     this.size = canvasEl.width / 3;
@@ -18,8 +18,7 @@ export default class Card {
   }
 
   createCard() {
-    // this.canvasEl.appendChild()'
-    // debugger
+    
     const cardDiv = document.createElement('div');
     cardDiv.style.backgroundSize = `${this.size}px ${this.size}px`;
     cardDiv.style.border = '1px solid white';
@@ -28,9 +27,7 @@ export default class Card {
   }
 
   drawCard() {
-    // if(this.isEmtpy) {
-    //   return;
-    // }
+   
     let size = this.size
     let baseX = this.baseIndex[0];
     let baseY = this.baseIndex[1];

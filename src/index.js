@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let img = new Image();
   // debugger
   img.setAttribute(`src`, `data:image/jpg;base64, ${cute}`);
-  ctx.drawImage(img, 0, 0, boardSize, boardSize);
+  ctx.drawImage(img, 0, 0, img.width, img.height,
+                     0, 0, canvas.width, canvas.height);
   console.log("webpack running");
   
   let puzzle = new Puzzle(canvas, img);
