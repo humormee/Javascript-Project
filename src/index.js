@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let cardSize = document.getElementById('puzzle').width / 3;
 
     let clickLoc = {
-      x: Math.floor((e.clientX - rect.left)/cardSize),
-      y: Math.floor((e.clientY - rect.top)/cardSize)
+      x: Math.floor(Math.abs((e.clientX - rect.right))/cardSize),
+      y: Math.floor(Math.abs((e.clientY - rect.bottom))/cardSize)
     }
 
     window.puzzle.switchCards(clickLoc);

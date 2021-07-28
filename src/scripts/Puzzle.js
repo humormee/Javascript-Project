@@ -12,7 +12,24 @@ export default class Puzzle {
       x: 0,
       y: 0
     };
-    this.setBoard();
+    this.cardsArray = new Array(3);
+    //initialize cards Arr with x, y positions from 0,0 to 2,2
+    for (let i = 0; i < 3; i++) {
+      this.cardsArray[i] = new Array(2)
+      for (let j = 0; j < 3; j++) {
+        
+        this.cardsArray[i][j] = new Card(this.img, this.canvas, [2 - i, 2 - j], [i, j])
+        // this.cardsArray[i][j] = {
+        //   baseX: i,
+        //   baseY: j,
+        //   x: 2 - i,
+        //   y: 2 - j
+        // };
+      }
+    }
+
+    // this.emptyCard.x = this.cardsArray[2][2].x;
+    // this.emptyCard.y = this.cardsArray[2][2].y;
     this.isSolved = false;
     
   }
@@ -78,7 +95,7 @@ export default class Puzzle {
       console.log("empty next to click yep")
       
     }
-    this.setBoard();
+    // this.setBoard();
     this.drawCards();
 
   }
