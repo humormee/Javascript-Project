@@ -1,17 +1,18 @@
 import "./styles/index.scss";
+import Stopwatch from "./scripts/Stopwatch";
 import Puzzle from "./scripts/Puzzle";
 import { cute } from "./assets/images/cute"
 import { lizard } from "./assets/images/lizard";
 
 document.addEventListener('DOMContentLoaded', () => {
+  let timer = new Stopwatch();
+  timer.start();
   const canvas = document.getElementById('puzzle');
-  // debugger
   const ctx = canvas.getContext("2d");
   let boardSize = canvas.width;
   let cardSize = boardSize / 3;
   
   let img = new Image();
-  // debugger
   img.setAttribute(`src`, `data:image/jpg;base64, ${cute}`);
   ctx.drawImage(img, 0, 0, img.width, img.height,
                      0, 0, canvas.width, canvas.height);
