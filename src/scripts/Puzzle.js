@@ -32,7 +32,7 @@ export default class Puzzle {
         
       }
     }
-    cardsArray[2][2] = this.emptyCard;
+    // cardsArray[2][2] = this.emptyCard;
     return cardsArray;
   }
 
