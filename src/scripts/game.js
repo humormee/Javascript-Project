@@ -1,5 +1,6 @@
 import { lizard } from '../assets/images/lizard'
 import Canvas from './Canvas';
+import { cute } from '../assets/images/cute'
 
 let img = new Image();
 debugger

@@ -1,6 +1,6 @@
 import Card from "./Card";
 import { lizard } from "../assets/images/lizard";
-
+import { cute } from "../assets/images/cute"
 export default class Puzzle {
  
   constructor(canvas, img){
@@ -9,10 +9,7 @@ export default class Puzzle {
     this.ctx = canvas.getContext("2d");
     this.imageSrc = lizard;
     this.emptyCard = new Card(img, canvas, [0, 0], [0, 0], true);
-    // this.emptyCard = {
-    //   x: 0,
-    //   y: 0
-    // };
+    
     this.cardsArray = this.setBoard();
 
     
@@ -61,19 +58,25 @@ export default class Puzzle {
   }
 
   switchCards(clickLoc) {
-    let isAdjacent = (Math.abs(clickLoc.x - this.emptyCard.x) <= 1 && Math.abs(clickLoc.y - this.emptyCard.y) <= 1)
+    let clickedCard = this.cardsArray[clickLoc.x][clickLoc.y];
+    let emptyPosX = this.emptyCard.currentIndex[0];
+    let emptyPosY = this.emptyCard.currentIndex[1];
+
+    let isAdjacent = (Math.abs(clickLoc.x - emptyPosX) <= 1 && Math.abs(clickLoc.y - emptyPosY) <= 1)
     
-    let isDiagonal = (Math.abs(clickLoc.x - this.emptyCard.x) == 1 && Math.abs(clickLoc.y - this.emptyCard.y) == 1)
-    // debugger
+    let isDiagonal = (Math.abs(clickLoc.x - emptyPosX) == 1 && Math.abs(clickLoc.y - emptyPosY) == 1)
+    debugger
     if(isAdjacent && !isDiagonal){
       debugger
+      
       let temp = clickLoc;
+      this.cardsArray[emptyPosX][emptyPosY] = clickedCard;
       this.cardsArray[clickLoc.x][clickLoc.y] = this.emptyCard;
-      this.emptyCard = temp;
+      
+      this.emptyCard.currentIndex = [clickLoc.x, clickLoc.y];
       console.log("empty next to click yep")
       
     }
-    // this.setBoard();
     this.drawCards();
 
   }

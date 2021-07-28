@@ -1,5 +1,6 @@
 import "./styles/index.scss";
 import Puzzle from "./scripts/Puzzle";
+import { cute } from "./assets/images/cute"
 import { lizard } from "./assets/images/lizard";
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -20,13 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
   window.puzzle = puzzle;
   
   canvas.addEventListener('click', function(e) {
+    // debugger
     let rect = canvas.getBoundingClientRect();
 
     let cardSize = document.getElementById('puzzle').width / 3;
 
     let clickLoc = {
-      x: Math.floor(Math.abs((e.clientX - rect.right))/cardSize),
-      y: Math.floor(Math.abs((e.clientY - rect.bottom))/cardSize)
+      x: Math.floor(Math.abs((e.clientX - rect.left))/cardSize),
+      y: Math.floor(Math.abs((e.clientY - rect.top))/cardSize)
     }
 
     window.puzzle.switchCards(clickLoc);
