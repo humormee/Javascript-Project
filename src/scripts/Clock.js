@@ -7,7 +7,7 @@ export default class Clock {
     this.hours = 0;
     this.minutes = 0;
     this.seconds = 0;
-
+    this.timer = document.getElementById("timer");
     // 3. Call printTime.
     this.printTime();
 
@@ -31,7 +31,8 @@ export default class Clock {
       seconds = `0${this.seconds}`
     }
     const timeString = [hours, minutes, seconds].join(":");
-
+    debugger
+    this.timer.textContent = timeString;
     // Use console.log to print it.
     console.log(timeString);
   }
@@ -66,4 +67,4 @@ export default class Clock {
   }
 }
 
-const clock = new Clock();
+// const clock = new Clock();

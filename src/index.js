@@ -1,6 +1,6 @@
 import "./styles/index.scss";
 import Clock from './scripts/Clock';
-import Stopwatch from "./scripts/Stopwatch";
+// import Stopwatch from "./scripts/Stopwatch";
 import Puzzle from "./scripts/Puzzle";
 import { cute } from "./assets/images/cute"
 import { lizard } from "./assets/images/lizard";
