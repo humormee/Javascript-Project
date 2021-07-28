@@ -9,7 +9,10 @@ export default class Card {
     this.ctx = canvasEl.getContext("2d");
     this.currentIndex = currentIndex;
     this.baseIndex = baseIndex;
-    this.size = canvasEl.width / 3;
+    debugger
+    this.height = this.img.height / 3;
+    this.width = this.img.width / 3;
+    this.size = this.canvasEl.width / 3;
 
     let el = this.createCard();
     this.canvasEl.appendChild(el);
@@ -33,7 +36,7 @@ export default class Card {
     let baseY = this.baseIndex[1];
     let i = this.currentIndex[0];
     let j = this.currentIndex[1];
-    
-    this.ctx.drawImage(this.img, baseX * size, baseY * size, size, size, i * size, j * size, size, size);
+    debugger
+    this.ctx.drawImage(this.img, baseX * this.width, baseY * this.height, this.width, this.height, i * size, j * size, size, size);
   }
 }

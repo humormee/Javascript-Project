@@ -21,7 +21,6 @@ export default class Puzzle {
   }
 
   shuffle() {
-    debugger
     this.isShuffling = true;
     let clickArr = [
       {x: 0, y: 0},
@@ -37,7 +36,7 @@ export default class Puzzle {
 
     let randomClick; 
     
-    for(let i = 0; i < 1; i++) {
+    for(let i = 0; i < 30; i++) {
       randomClick = clickArr[Math.floor(Math.random() * clickArr.length)];
       this.switchCards(randomClick);
     }
@@ -76,7 +75,12 @@ export default class Puzzle {
       }
     }
     
-    this.isSolved();
+    if(this.isSolved()){
+      let img = new Image();
+      img.setAttribute(`src`, `data:image/jpg;base64, ${cute}`);
+      this.ctx.drawImage(img, 0, 0, img.width, img.height,
+                     0, 0, this.canvas.width, this.canvas.height);
+    };
     // let imageWidth = this.img.width;
     // let imageHeight = this.img.height;
     // const data = this.ctx.getImageData(0, 0, imageWidth, imageHeight);
@@ -110,7 +114,7 @@ export default class Puzzle {
   }
 
   isSolved(){
-    debugger
+    
     if(this.isShuffling){
       return false;
     }
@@ -118,9 +122,7 @@ export default class Puzzle {
     this.cardsArray.forEach(row => {
       row.forEach(card => {
         if(card.currentIndex[0] !== card.baseIndex[0] || card.currentIndex[1] !== card.baseIndex[1]){
-          debugger
           isSolved = false;
-          // break;
         }
       })
       
