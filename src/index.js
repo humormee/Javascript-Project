@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const clock = new Clock();
   const canvas = document.getElementById('puzzle');
   const ctx = canvas.getContext("2d");
+  const reset = document.getElementById("reset");
   let boardSize = canvas.width;
   let cardSize = boardSize / 3;
   
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let puzzle = new Puzzle(canvas, img);
   puzzle.drawCards();
   window.puzzle = puzzle;
+  window.clock = clock;
   
   canvas.addEventListener('click', function(e) {
     let rect = canvas.getBoundingClientRect();
@@ -37,5 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
     window.puzzle.switchCards(clickLoc);
 
   }, false)
+
+  reset.addEventListener('click', function(e) {
+    puzzle = new Puzzle(canvas, img);
+    puzzle.drawCards();
+    window.clock.reset();
+
+  }, false)
+
+  
 
 }) 

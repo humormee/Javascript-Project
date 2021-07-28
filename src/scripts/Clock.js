@@ -1,7 +1,7 @@
 export default class Clock {
   constructor() {
     // 1. Create a Date object.
-    const currentTime = new Date();
+    // const currentTime = new Date();
 
     // 2. Store the hour, minute, and second.
     this.hours = 0;
@@ -13,6 +13,18 @@ export default class Clock {
 
     // 4. Schedule the tick at 1 second intervals.
     setInterval(this._tick.bind(this), 1000);
+  }
+
+  reset() {
+    this.hours = 0;
+    this.minutes = 0;
+    this.seconds = 0;
+    this.timer = document.getElementById("timer");
+    // 3. Call printTime.
+    this.printTime();
+
+    // 4. Schedule the tick at 1 second intervals.
+    // setInterval(this._tick.bind(this), 1000);
   }
 
   printTime() {
@@ -34,7 +46,7 @@ export default class Clock {
     debugger
     this.timer.textContent = timeString;
     // Use console.log to print it.
-    console.log(timeString);
+    // console.log(timeString);
   }
 
   _tick() {
