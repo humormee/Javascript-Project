@@ -12,6 +12,7 @@ export default class Puzzle {
     this.imageSrc = cute;
     this.emptyCard = new Card(img, canvas, [0, 0], [0, 0], true);
     this.cardsArray = [];
+    this.isShuffling = false;
     this.setBoard();
 
     
@@ -36,7 +37,7 @@ export default class Puzzle {
 
     let randomClick; 
     
-    for(let i = 0; i < 100; i++) {
+    for(let i = 0; i < 1; i++) {
       randomClick = clickArr[Math.floor(Math.random() * clickArr.length)];
       this.switchCards(randomClick);
     }
@@ -85,7 +86,7 @@ export default class Puzzle {
     let clickedCard = this.cardsArray[clickLoc.x][clickLoc.y];
     let emptyPosX = this.emptyCard.currentIndex[0];
     let emptyPosY = this.emptyCard.currentIndex[1];
-    debugger
+    
 
     if (clickLoc.x === emptyPosX && clickLoc.y === emptyPosY){
       return;
@@ -113,16 +114,23 @@ export default class Puzzle {
     if(this.isShuffling){
       return false;
     }
-    this.cardsArray.forEach(card => {
-      if(card.currentIndex !== card.baseIndex){
-        debugger
-        return false;
-      }
+    let isSolved = true;
+    this.cardsArray.forEach(row => {
+      row.forEach(card => {
+        if(card.currentIndex[0] !== card.baseIndex[0] || card.currentIndex[1] !== card.baseIndex[1]){
+          debugger
+          isSolved = false;
+          // break;
+        }
+      })
+      
     })
   
+    if (isSolved){
+      console.log("congrats you solved it!!")
+    }
     
-    console.log("congrats you solved it!!")
-    return true;
+    return isSolved;
   }
 
 }
