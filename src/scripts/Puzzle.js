@@ -24,10 +24,11 @@ export default class Puzzle {
     let cardsArray = new Array(3);
     //initialize cards Arr with x, y positions from 0,0 to 2,2
     for (let i = 0; i < 3; i++) {
-      cardsArray[i] = new Array(2)
+      cardsArray[i] = new Array(3)
       for (let j = 0; j < 3; j++) {
         
-        cardsArray[i][j] = new Card(this.img, this.canvas, [2 - i, 2 - j], [i, j])
+        // cardsArray[i][j] = new Card(this.img, this.canvas, [2 - i, 2 - j], [i, j])
+        cardsArray[i][j] = new Card(this.img, this.canvas, [i, j], [i, j])
         
       }
     }
@@ -37,24 +38,20 @@ export default class Puzzle {
 
   drawCards(){
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    // let cardSize = this.canvas.width / 3;
 
     debugger
     for(let i = 0; i < 3; i++) {
       for(let j = 0; j < 3; j++) {
        
-
-
-        if(i !== this.emptyCard.x || j !== this.emptyCard.y) {
+        if(!this.cardsArray[i][j].isEmpty) {
           this.cardsArray[i][j].drawCard();
-         
         }
       }
     }
     
-    let imageWidth = this.img.width;
-    let imageHeight = this.img.height;
-    const data = this.ctx.getImageData(0, 0, imageWidth, imageHeight);
+    // let imageWidth = this.img.width;
+    // let imageHeight = this.img.height;
+    // const data = this.ctx.getImageData(0, 0, imageWidth, imageHeight);
   }
 
   switchCards(clickLoc) {
@@ -65,13 +62,13 @@ export default class Puzzle {
     let isAdjacent = (Math.abs(clickLoc.x - emptyPosX) <= 1 && Math.abs(clickLoc.y - emptyPosY) <= 1)
     
     let isDiagonal = (Math.abs(clickLoc.x - emptyPosX) == 1 && Math.abs(clickLoc.y - emptyPosY) == 1)
-    debugger
+    
     if(isAdjacent && !isDiagonal){
       debugger
-      
+
       let temp = clickLoc;
       this.cardsArray[emptyPosX][emptyPosY] = clickedCard;
-      this.cardsArray[clickLoc.x][clickLoc.y] = this.emptyCard;
+      this.cardsArray[clickLoc.x][clickLoc.y].currentIndex = this.emptyCard.currentIndex;
       
       this.emptyCard.currentIndex = [clickLoc.x, clickLoc.y];
       console.log("empty next to click yep")
