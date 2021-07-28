@@ -92,7 +92,7 @@ export default class Puzzle {
     let emptyPosY = this.emptyCard.currentIndex[1];
     
 
-    if (clickLoc.x === emptyPosX && clickLoc.y === emptyPosY){
+    if (clickLoc.x === emptyPosX && clickLoc.y === emptyPosY || this.isSolved()){
       return;
     }
     let isAdjacent = (Math.abs(clickLoc.x - emptyPosX) <= 1 && Math.abs(clickLoc.y - emptyPosY) <= 1)
