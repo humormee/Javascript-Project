@@ -1,12 +1,14 @@
 import "./styles/index.scss";
+import Clock from './scripts/Clock';
 import Stopwatch from "./scripts/Stopwatch";
 import Puzzle from "./scripts/Puzzle";
 import { cute } from "./assets/images/cute"
 import { lizard } from "./assets/images/lizard";
 
 document.addEventListener('DOMContentLoaded', () => {
-  let timer = new Stopwatch();
-  timer.start();
+  // let timer = new Stopwatch();
+  // timer.start();
+  const clock = new Clock();
   const canvas = document.getElementById('puzzle');
   const ctx = canvas.getContext("2d");
   let boardSize = canvas.width;
