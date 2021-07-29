@@ -92,9 +92,7 @@ export default class Puzzle {
                      0, 0, this.canvas.width, this.canvas.height);
 
     };
-    // let imageWidth = this.img.width;
-    // let imageHeight = this.img.height;
-    // const data = this.ctx.getImageData(0, 0, imageWidth, imageHeight);
+    
   }
 
   switchCards(clickLoc) {
