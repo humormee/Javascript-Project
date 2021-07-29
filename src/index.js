@@ -29,11 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let cardSize = document.getElementById('puzzle').width / 3;
 
+    debugger
     let clickLoc = {
+      
       x: Math.floor(Math.abs((e.clientX - rect.left))/cardSize),
       y: Math.floor(Math.abs((e.clientY - rect.top))/cardSize)
+      
     }
-
+    console.log(`clickLoc: ${clickLoc}`);
+    console.log(`[e.clientX, e.clientY]: ${[e.clientX, e.clientY]}`);
     window.puzzle.switchCards(clickLoc);
 
   }, false)
