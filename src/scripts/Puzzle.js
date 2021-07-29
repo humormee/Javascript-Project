@@ -36,7 +36,7 @@ export default class Puzzle {
 
     let randomClick; 
     
-    for(let i = 0; i < 30; i++) {
+    for(let i = 0; i < 10; i++) {
       randomClick = clickArr[Math.floor(Math.random() * clickArr.length)];
       this.switchCards(randomClick);
     }
@@ -47,19 +47,15 @@ export default class Puzzle {
   setBoard() {
 
     let cardsArray = new Array(3);
-    //initialize cards Arr with x, y positions from 0,0 to 2,2
+    
     for (let i = 0; i < 3; i++) {
       cardsArray[i] = new Array(3)
       for (let j = 0; j < 3; j++) {
-        
-        // cardsArray[i][j] = new Card(this.img, this.canvas, [2 - i, 2 - j], [i, j])
         cardsArray[i][j] = new Card(this.img, this.canvas, [i, j], [i, j])
-        
       }
     }
     
     this.cardsArray = cardsArray;
-    // cardsArray[2][2] = this.emptyCard;
     this.shuffle();
   }
 
@@ -130,6 +126,7 @@ export default class Puzzle {
   
     if (isSolved){
       console.log("congrats you solved it!!")
+      window.clock.stop();
     }
     
     return isSolved;

@@ -1,34 +1,36 @@
 export default class Clock {
   constructor() {
-    // 1. Create a Date object.
-    // const currentTime = new Date();
+    
 
-    // 2. Store the hour, minute, and second.
     this.hours = 0;
     this.minutes = 0;
     this.seconds = 0;
     this.timer = document.getElementById("timer");
-    // 3. Call printTime.
+    this.isStopped = false;
     this.printTime();
 
-    // 4. Schedule the tick at 1 second intervals.
     setInterval(this._tick.bind(this), 1000);
   }
 
+  stop() {
+    this.isStopped = true;
+  }
+
+  resume() {
+    // this.isStopped = false;
+  }
+
   reset() {
+    this.isStopped = false;
     this.hours = 0;
     this.minutes = 0;
     this.seconds = 0;
     this.timer = document.getElementById("timer");
-    // 3. Call printTime.
     this.printTime();
 
-    // 4. Schedule the tick at 1 second intervals.
-    // setInterval(this._tick.bind(this), 1000);
   }
 
   printTime() {
-    // Format the time in HH:MM:SS
     let hours = this.hours;
     let minutes = this.minutes;
     let seconds = this.seconds;
@@ -45,20 +47,16 @@ export default class Clock {
     const timeString = [hours, minutes, seconds].join(":");
     debugger
     this.timer.textContent = timeString;
-    // Use console.log to print it.
-    // console.log(timeString);
+    
   }
 
   _tick() {
-    // 1. Increment the time by one second.
-    this._incrementSeconds();
+    if(!this.isStopped) this._incrementSeconds();
 
-    // 2. Call printTime.
     this.printTime();
   }
 
   _incrementSeconds() {
-    // 1. Increment the time by one second.
     this.seconds += 1;
     if (this.seconds === 60) {
       this.seconds = 0;
@@ -78,5 +76,3 @@ export default class Clock {
     this.hours = (this.hours + 1) % 24;
   }
 }
-
-// const clock = new Clock();

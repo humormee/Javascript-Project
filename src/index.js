@@ -1,13 +1,11 @@
 import "./styles/index.scss";
 import Clock from './scripts/Clock';
-// import Stopwatch from "./scripts/Stopwatch";
 import Puzzle from "./scripts/Puzzle";
 import { cute } from "./assets/images/cute"
 import { lizard } from "./assets/images/lizard";
 
 document.addEventListener('DOMContentLoaded', () => {
-  // let timer = new Stopwatch();
-  // timer.start();
+  
   const clock = new Clock();
   const canvas = document.getElementById('puzzle');
   const ctx = canvas.getContext("2d");
@@ -19,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   img.setAttribute(`src`, `data:image/jpg;base64, ${cute}`);
   ctx.drawImage(img, 0, 0, img.width, img.height,
                      0, 0, canvas.width, canvas.height);
-  console.log("webpack running");
+  console.log("content loaded listener");
   
   let puzzle = new Puzzle(canvas, img);
   puzzle.drawCards();
@@ -41,8 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }, false)
 
   reset.addEventListener('click', function(e) {
-    puzzle = new Puzzle(canvas, img);
-    puzzle.drawCards();
+    
+    window.puzzle.setBoard();
     window.clock.reset();
 
   }, false)
