@@ -45,7 +45,6 @@ export default class Clock {
       seconds = `0${this.seconds}`
     }
     const timeString = [hours, minutes, seconds].join(":");
-    debugger
     this.timer.textContent = timeString;
     
   }

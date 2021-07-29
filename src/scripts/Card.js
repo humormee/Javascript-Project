@@ -16,15 +16,15 @@ export default class Card {
     let el = this.createCard();
     this.canvasEl.appendChild(el);
 
-
   }
 
   createCard() {
     
     const cardDiv = document.createElement('div');
-    cardDiv.style.backgroundSize = `${this.size}px ${this.size}px`;
-    cardDiv.style.border = '1px solid white';
-    cardDiv.style.position = 'absolute';
+    cardDiv.style.class = "card";
+    // cardDiv.style.backgroundSize = `${this.size}px ${this.size}px`;
+    // cardDiv.style.border = '1px solid white';
+    // cardDiv.style.position = 'absolute';
     return cardDiv;
   }
 

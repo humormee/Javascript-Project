@@ -13,8 +13,9 @@ export default class Puzzle {
     this.emptyCard = new Card(img, canvas, [0, 0], [0, 0], true);
     this.cardsArray = [];
     this.isShuffling = false;
+    this.drawGrid();
     this.setBoard();
-
+    
     
     // this.isSolved = false;
     
@@ -44,6 +45,18 @@ export default class Puzzle {
 
   }
  
+  drawGrid() {
+    debugger
+    let space = this.img.width / 3;
+    let end = this.img.height;
+
+    for(let i = 1; i < 3; i++) {
+      this.ctx.beginPath();
+      this.ctx.moveTo(space*i, 0);
+      this.ctx.lineTo(space*i, end);
+      this.ctx.stroke();
+    }
+  }
   setBoard() {
 
     let cardsArray = new Array(3);
@@ -74,8 +87,10 @@ export default class Puzzle {
     if(this.isSolved()){
       let img = new Image();
       img.setAttribute(`src`, `data:image/jpg;base64, ${cute}`);
+      
       this.ctx.drawImage(img, 0, 0, img.width, img.height,
                      0, 0, this.canvas.width, this.canvas.height);
+
     };
     // let imageWidth = this.img.width;
     // let imageHeight = this.img.height;

@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
   let img = new Image();
   img.setAttribute(`src`, `data:image/jpg;base64, ${cute}`);
-  ctx.drawImage(img, 0, 0, img.width, img.height,
-                     0, 0, canvas.width, canvas.height);
+  // ctx.drawImage(img, 0, 0, img.width, img.height,
+                    //  0, 0, canvas.width, canvas.height);
   console.log("content loaded listener");
   
   let puzzle = new Puzzle(canvas, img);
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, false)
 
   reset.addEventListener('click', function(e) {
-    
+
     window.puzzle.setBoard();
     window.clock.reset();
 
