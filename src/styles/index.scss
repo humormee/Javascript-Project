@@ -1,6 +1,5 @@
 
 body {
-  // background-color: #FDFFFC;
   .canvas-container {
   position: absolute;
   display: flex;
@@ -39,16 +38,16 @@ body {
 
 
 div.time-reset {
-
-
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
   display: flex;
+  height: 100px;
   justify-content: space-around;
   align-items: center;
   background-color: #92D5E6;
-  // height: 100%;
-  // width: 110%;
-  margin: 0;
-  padding: 0;
+
 
   #timer {
     color: white;
@@ -68,16 +67,10 @@ div.time-reset {
           rgba(0, 0, 0, 0.3), 
           rgba(0, 0, 0, 0.3)
         ),
- 
+
     }
     width: 80px;
     height: 50px;
   }
-  // #reset
 }
 }
-
-
-
-
-

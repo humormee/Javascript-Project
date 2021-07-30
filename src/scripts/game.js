@@ -12,11 +12,11 @@ export const findClick = function(e) {
       y: Math.floor(Math.abs((e.clientY - rect.top))/cardHeight)
       
     }
-    debugger
+    
     console.log(`clickLoc: ${clickLoc}`);
  
     console.log(`[rect.left, rect.top]: ${[e.offsetX, e.offsetY]}`);
 
-    debugger
+    
     window.puzzle.switchCards(clickLoc);
 }
