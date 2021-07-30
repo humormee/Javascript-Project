@@ -37,14 +37,12 @@ body .canvas-container canvas div {
   height: 200px;
 }
 body div.time-reset {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: #92D5E6;
+  margin: 0;
+  padding: 0;
 }
 body div.time-reset #timer {
   color: white;
