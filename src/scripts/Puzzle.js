@@ -7,10 +7,10 @@ export default class Puzzle {
   constructor(canvas, img){
     this.isShuffling = false;
     this.canvas = canvas;
-    this.img = img;
+    this.img = window.img;
     this.ctx = canvas.getContext("2d");
     this.imageSrc = window.img;
-    this.emptyCard = new Card(img, canvas, [0, 0], [0, 0], true);
+    this.emptyCard = new Card(this.img, canvas, [0, 0], [0, 0], true);
     this.cardsArray = [];
     this.isShuffling = false;
     this.drawGrid();
@@ -34,7 +34,7 @@ export default class Puzzle {
 
     let randomClick; 
     
-    for(let i = 0; i < 10; i++) {
+    for(let i = 0; i < 100; i++) {
       randomClick = clickArr[Math.floor(Math.random() * clickArr.length)];
       this.switchCards(randomClick);
     }
@@ -84,7 +84,7 @@ export default class Puzzle {
     
     if(this.isSolved()){
     
-      this.ctx.drawImage(window.img, 0, 0, img.width, img.height,
+      this.ctx.drawImage(window.img, 0, 0, this.img.width, this.img.height,
                      0, 0, this.canvas.width, this.canvas.height);
 
     };

@@ -27,11 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let cardSize = boardSize / 3;
 
   
-  // ctx.drawImage(img, 0, 0, img.width, img.height,
-                    //  0, 0, canvas.width, canvas.height);
-  
+
   chooseImage();
-  let puzzle = new Puzzle(canvas, img);
+  let puzzle = new Puzzle(canvas, window.img);
   puzzle.drawCards();
   window.puzzle = puzzle;
   window.clock = clock;

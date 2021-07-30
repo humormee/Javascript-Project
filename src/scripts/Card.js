@@ -1,7 +1,7 @@
 export default class Card {
   constructor(img, canvasEl, currentIndex, baseIndex, isEmpty = false) {
     
-    this.img = img;
+    this.img = window.img;
     this.isEmtpy = isEmpty;
     this.canvasEl = canvasEl;
     this.ctx = canvasEl.getContext("2d");
