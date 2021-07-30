@@ -1,7 +1,3 @@
-import { lizard } from '../assets/images/lizard'
-import { cute } from '../assets/images/cute'
-
-
 export const findClick = function(e) {
 
     let rect = e.target.getBoundingClientRect();
@@ -16,11 +12,11 @@ export const findClick = function(e) {
       y: Math.floor(Math.abs((e.clientY - rect.top))/cardHeight)
       
     }
-    debugger
+    
     console.log(`clickLoc: ${clickLoc}`);
  
     console.log(`[rect.left, rect.top]: ${[e.offsetX, e.offsetY]}`);
 
-    debugger
+    
     window.puzzle.switchCards(clickLoc);
 }
