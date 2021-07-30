@@ -4,7 +4,17 @@ import Puzzle from "./scripts/Puzzle";
 import { findClick } from "./scripts/game";
 import { cute } from "./assets/images/cute";
 import { lizard } from "./assets/images/lizard";
+import { panda } from "./assets/images/panda";
+import { manatees } from "./assets/images/manatees";
 
+function chooseImage(){
+  const imgArr = [cute, lizard, panda, manatees];
+  let pic = imgArr[Math.floor(Math.random()*imgArr.length)];
+  
+  let img = new Image();
+  img.setAttribute(`src`, `data:image/jpg;base64, ${pic}`);
+  window.img = img;
+}
 document.addEventListener('DOMContentLoaded', () => {
   
   const clock = new Clock();
@@ -13,13 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const reset = document.getElementById("reset");
   let boardSize = canvas.width;
   let cardSize = boardSize / 3;
+
   
-  let img = new Image();
-  img.setAttribute(`src`, `data:image/jpg;base64, ${cute}`);
   // ctx.drawImage(img, 0, 0, img.width, img.height,
                     //  0, 0, canvas.width, canvas.height);
-  console.log("content loaded listener");
   
+  chooseImage();
   let puzzle = new Puzzle(canvas, img);
   puzzle.drawCards();
   window.puzzle = puzzle;

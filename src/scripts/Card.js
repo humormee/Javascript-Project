@@ -1,5 +1,3 @@
-// import { lizard } from "../assets/images/lizard";
-
 export default class Card {
   constructor(img, canvasEl, currentIndex, baseIndex, isEmpty = false) {
     

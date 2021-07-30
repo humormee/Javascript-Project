@@ -9,16 +9,13 @@ export default class Puzzle {
     this.canvas = canvas;
     this.img = img;
     this.ctx = canvas.getContext("2d");
-    this.imageSrc = cute;
+    this.imageSrc = window.img;
     this.emptyCard = new Card(img, canvas, [0, 0], [0, 0], true);
     this.cardsArray = [];
     this.isShuffling = false;
     this.drawGrid();
     this.setBoard();
-    
-    
-    // this.isSolved = false;
-    
+        
   }
 
   shuffle() {
@@ -86,10 +83,10 @@ export default class Puzzle {
     }
     
     if(this.isSolved()){
-      let img = new Image();
-      img.setAttribute(`src`, `data:image/jpg;base64, ${cute}`);
+      // let img = new Image();
+      // img.setAttribute(`src`, `data:image/jpg;base64, ${window.img}`);
       
-      this.ctx.drawImage(img, 0, 0, img.width, img.height,
+      this.ctx.drawImage(window.img, 0, 0, img.width, img.height,
                      0, 0, this.canvas.width, this.canvas.height);
 
     };

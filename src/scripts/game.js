@@ -1,7 +1,3 @@
-import { lizard } from '../assets/images/lizard'
-import { cute } from '../assets/images/cute'
-
-
 export const findClick = function(e) {
 
     let rect = e.target.getBoundingClientRect();
