@@ -88,7 +88,7 @@ export default class Puzzle {
     if(this.isSolved()){
 
       debugger
-      this.ctx.drawImage(window.img, 0, 0, this.img.width, this.img.height,
+      this.ctx.drawImage(window.img, 0, 0, window.img.width, window.img.height,
                      0, 0, this.canvas.width, this.canvas.height);
 
     };
