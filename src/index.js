@@ -8,6 +8,7 @@ import { panda } from "./assets/images/panda";
 import { manatees } from "./assets/images/manatees";
 
 function chooseImage(){
+  console.log("entered chooseImage function")
   const imgArr = [cute, lizard, panda, manatees];
   let pic = imgArr[Math.floor(Math.random()*imgArr.length)];
   
@@ -15,6 +16,7 @@ function chooseImage(){
   img.setAttribute(`src`, `data:image/jpg;base64, ${pic}`);
   window.img = img;
 }
+
 document.addEventListener('DOMContentLoaded', () => {
   
   const clock = new Clock();
@@ -42,10 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   reset.addEventListener('click', function(e) {
-
+    chooseImage();
+    console.log('reset click event listener activated')
     window.puzzle.setBoard();
     window.clock.reset();
-
+    
   }, false)
 
   

@@ -83,9 +83,7 @@ export default class Puzzle {
     }
     
     if(this.isSolved()){
-      // let img = new Image();
-      // img.setAttribute(`src`, `data:image/jpg;base64, ${window.img}`);
-      
+    
       this.ctx.drawImage(window.img, 0, 0, img.width, img.height,
                      0, 0, this.canvas.width, this.canvas.height);
 
