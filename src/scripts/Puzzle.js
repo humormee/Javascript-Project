@@ -47,6 +47,7 @@ export default class Puzzle {
  
   drawGrid() {
     debugger
+    
     let space = this.img.width / 3;
     let end = this.img.height;
 
