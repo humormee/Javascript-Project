@@ -42,6 +42,7 @@ body div.time-reset {
   right: 0;
   top: 0;
   display: flex;
+  height: 100px;
   justify-content: space-around;
   align-items: center;
   background-color: #92D5E6;
