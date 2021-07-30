@@ -33,27 +33,31 @@ import { cute } from '../assets/images/cute'
 
 
 export const findClick = function(e) {
-  debugger
+  // debugger
   // let canvas = document.getElementById('puzzle');
   // let rect = canvas.getBoundingClientRect();
 
   
     // let cardSize = document.getElementById('puzzle').width / 3;
     
-    let width = window.innerWidth;
-    let height = window.innerHeight;
-    window.puzzle.width = width;
-    window.puzzle.height = height;
+    
+    // window.puzzle.width = width;
+    // window.puzzle.height = height;
+    
+
+    let rect = e.target.getBoundingClientRect();
+    let width = rect.width;
+    let height = rect.height;
     let cardHeight = height / 3;
     let cardWidth = width / 3;
 
-    
     let clickLoc = {
       
-      x: Math.floor(Math.abs((e.offsetX))/cardWidth),
-      y: Math.floor(Math.abs((e.offsetY))/cardHeight)
+      x: Math.floor(Math.abs((e.clientX - rect.left))/cardWidth),
+      y: Math.floor(Math.abs((e.clientY - rect.top))/cardHeight)
       
     }
+    debugger
     console.log(`clickLoc: ${clickLoc}`);
     // console.log(`[e.clientX, e.clientY]: ${[e.clientX, e.clientY]}`);
     // console.log(`cardSize: ${cardSize}`);

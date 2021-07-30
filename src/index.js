@@ -28,34 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
   canvas.addEventListener('click', function(e) {
 
     findClick(e);
-    // let rect = canvas.getBoundingClientRect();
-
-    
-    // // let cardSize = document.getElementById('puzzle').width / 3;
-    
-    // let width = window.innerWidth;
-    // let height = window.innerHeight;
-    // window.puzzle.width = width;
-    // window.puzzle.height = height;
-    // let cardHeight = height / 3;
-    // let cardWidth = width / 3;
-
-    
-    // let clickLoc = {
-      
-    //   x: Math.floor(Math.abs((e.offsetX))/cardWidth),
-    //   y: Math.floor(Math.abs((e.offsetY))/cardHeight)
-      
-    // }
-    // console.log(`clickLoc: ${clickLoc}`);
-    // // console.log(`[e.clientX, e.clientY]: ${[e.clientX, e.clientY]}`);
-    // console.log(`cardSize: ${cardSize}`);
-    // console.log(`[rect.left, rect.top]: ${[e.offsetX, e.offsetY]}`);
-
-    // debugger
-    // window.puzzle.switchCards(clickLoc);
 
   }, false)
+
 
   reset.addEventListener('click', function(e) {
 
