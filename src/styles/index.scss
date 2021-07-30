@@ -1,6 +1,6 @@
 
 body {
-  background-color: #38A3A5;
+  // background-color: #FDFFFC;
   .canvas-container {
   position: absolute;
   display: flex;
@@ -14,7 +14,7 @@ body {
   border-style: solid;
   border-width: 1px;
   border-color: rgb(0, 0, 0);
-  background-color: #38A3A5;
+  background-color: #D3F6DB;
   canvas {
     display: flex;
     flex-wrap: wrap;
@@ -24,10 +24,13 @@ body {
     justify-content: center;
     border-style: solid;
     border-width: 1px;
-    border-color: white;
+    border-color: #FDFFFC;
     background-color: white;
+    &:hover {
+      cursor: pointer;
+    }
     div {
-      border: 1px solid white;
+      border: 1px solid #FDFFFC;
       width: 200px;
       height: 200px;
     }
@@ -36,19 +39,37 @@ body {
 
 
 div.time-reset {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #22577A;
-  width: 100%;
+  background-color: #92D5E6;
+  // padding: 30px;
+  // width: 100%;
+  // height: 100%;
 
   #timer {
+    color: white;
     // background-color: #38A3A5;
   }
   #reset {
-    background-color: #38A3A5;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    border-radius: 4px;
+    color: white;
+    background-color: #772D8B;
     &:hover {
       cursor: pointer;
+      background:
+        /* top, transparent black, faked with gradient */ 
+        linear-gradient(
+          rgba(0, 0, 0, 0.3), 
+          rgba(0, 0, 0, 0.3)
+        ),
       // opacity: 3;
       // background-color: opaci;
     }

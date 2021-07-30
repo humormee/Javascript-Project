@@ -1,9 +1,6 @@
 /*!********************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/styles/index.scss ***!
   \********************************************************************************************************************************************/
-body {
-  background-color: #38A3A5;
-}
 body .canvas-container {
   position: absolute;
   display: flex;
@@ -17,7 +14,7 @@ body .canvas-container {
   border-style: solid;
   border-width: 1px;
   border-color: black;
-  background-color: #38A3A5;
+  background-color: #D3F6DB;
 }
 body .canvas-container canvas {
   display: flex;
@@ -28,26 +25,41 @@ body .canvas-container canvas {
   justify-content: center;
   border-style: solid;
   border-width: 1px;
-  border-color: white;
+  border-color: #FDFFFC;
   background-color: white;
 }
+body .canvas-container canvas:hover {
+  cursor: pointer;
+}
 body .canvas-container canvas div {
-  border: 1px solid white;
+  border: 1px solid #FDFFFC;
   width: 200px;
   height: 200px;
 }
 body div.time-reset {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #22577A;
-  width: 100%;
+  background-color: #92D5E6;
+}
+body div.time-reset #timer {
+  color: white;
 }
 body div.time-reset #reset {
-  background-color: #38A3A5;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  border-radius: 4px;
+  color: white;
+  background-color: #772D8B;
   width: 80px;
   height: 50px;
 }
 body div.time-reset #reset:hover {
   cursor: pointer;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 }
