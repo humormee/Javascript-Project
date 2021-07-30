@@ -1,7 +1,8 @@
 import "./styles/index.scss";
 import Clock from './scripts/Clock';
 import Puzzle from "./scripts/Puzzle";
-import { cute } from "./assets/images/cute"
+import { findClick } from "./scripts/game";
+import { cute } from "./assets/images/cute";
 import { lizard } from "./assets/images/lizard";
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,20 +26,34 @@ document.addEventListener('DOMContentLoaded', () => {
   window.clock = clock;
   
   canvas.addEventListener('click', function(e) {
-    let rect = canvas.getBoundingClientRect();
 
-    let cardSize = document.getElementById('puzzle').width / 3;
+    findClick(e);
+    // let rect = canvas.getBoundingClientRect();
 
-    debugger
-    let clickLoc = {
+    
+    // // let cardSize = document.getElementById('puzzle').width / 3;
+    
+    // let width = window.innerWidth;
+    // let height = window.innerHeight;
+    // window.puzzle.width = width;
+    // window.puzzle.height = height;
+    // let cardHeight = height / 3;
+    // let cardWidth = width / 3;
+
+    
+    // let clickLoc = {
       
-      x: Math.floor(Math.abs((e.clientX - rect.left))/cardSize),
-      y: Math.floor(Math.abs((e.clientY - rect.top))/cardSize)
+    //   x: Math.floor(Math.abs((e.offsetX))/cardWidth),
+    //   y: Math.floor(Math.abs((e.offsetY))/cardHeight)
       
-    }
-    console.log(`clickLoc: ${clickLoc}`);
-    console.log(`[e.clientX, e.clientY]: ${[e.clientX, e.clientY]}`);
-    window.puzzle.switchCards(clickLoc);
+    // }
+    // console.log(`clickLoc: ${clickLoc}`);
+    // // console.log(`[e.clientX, e.clientY]: ${[e.clientX, e.clientY]}`);
+    // console.log(`cardSize: ${cardSize}`);
+    // console.log(`[rect.left, rect.top]: ${[e.offsetX, e.offsetY]}`);
+
+    // debugger
+    // window.puzzle.switchCards(clickLoc);
 
   }, false)
 
