@@ -1,6 +1,5 @@
 
 body {
-  // background-color: #FDFFFC;
   .canvas-container {
   position: absolute;
   display: flex;
@@ -48,13 +47,10 @@ div.time-reset {
   justify-content: space-around;
   align-items: center;
   background-color: #92D5E6;
-  // padding: 30px;
-  // width: 100%;
-  // height: 100%;
+
 
   #timer {
     color: white;
-    // background-color: #38A3A5;
   }
   #reset {
     border-style: solid;
@@ -66,13 +62,12 @@ div.time-reset {
     &:hover {
       cursor: pointer;
       background:
-        /* top, transparent black, faked with gradient */ 
+
         linear-gradient(
           rgba(0, 0, 0, 0.3), 
           rgba(0, 0, 0, 0.3)
         ),
-      // opacity: 3;
-      // background-color: opaci;
+
     }
     width: 80px;
     height: 50px;
