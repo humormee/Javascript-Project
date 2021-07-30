@@ -37,7 +37,7 @@ export default class Puzzle {
 
     let randomClick; 
     
-    for(let i = 0; i < 10; i++) {
+    for(let i = 0; i < 50; i++) {
       randomClick = clickArr[Math.floor(Math.random() * clickArr.length)];
       this.switchCards(randomClick);
     }
