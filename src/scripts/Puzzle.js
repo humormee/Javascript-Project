@@ -45,46 +45,26 @@ export default class Puzzle {
 
   }
  
-  randomizeArr(array) {
-    let outerArr = [];
-    let innerArr = [];
-
+  randomizeArr() {
+    const loc = [];
+    let shuffledLoc = [];
+    
     for(let i = 0; i < 3; i++) {
-      outerArr.push[i];
-      innerArr.push[i];
-    }
-
-    var item = items[Math.floor(Math.random()*items.length)];
-
-    for(let i = 0; i < 3; i++) {
-      let ind1 = Math.floor(Math.random() * outerArr.length);
-      let ind2 = Math.floor(Math.random() * innerArr.length);
-
-      let num1 = outerArr[ind1];
-      let num2 = innerArr[ind2];
-
-      outerArr.splice(ind1, ind1);
-      innerArr.splice(ind2, ind2);
-    }
-
-
-
-    for (let i = array.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
-      // let temp = array[i];
-      // array[i] = array[j];
-      // array[j] = temp;
-      for (let k = array.length - 1; k > 0; k--) {
-
-        let t = Math.floor(Math.random() * (k + 1));
-        let temp2 = array[i][k];
-        array[i][k] = array[j][t];
-        array[j][t] = temp2;
-        debugger
+      for(let j = 0; j < 3; j++){
+        loc.push([i, j])
       }
     }
 
-    return array;
+    for(let i = 0; i < 9; i++) {
+      let ind = Math.floor(Math.random() * loc.length);
+      let num = loc[ind]
+
+      loc.splice(ind, 1);
+      shuffledLoc.push(num)
+    }
+
+
+    return shuffledLoc;
   }
 
   drawGrid() {
@@ -101,15 +81,16 @@ export default class Puzzle {
   setBoard() {
 
     let cardsArray = new Array(3);
-    
+    let randLocations = this.randomizeArr()
     for (let i = 0; i < 3; i++) {
       cardsArray[i] = new Array(3)
       for (let j = 0; j < 3; j++) {
-        cardsArray[i][j] = new Card(this.img, this.canvas, [i, j], [i, j])
+        cardsArray[i][j] = new Card(this.img, this.canvas, [i, j], randLocations.pop())
       }
     }
 
-    this.cardsArray = this.randomizeArr(cardsArray);
+    debugger
+    this.cardsArray = cardsArray;
     // this.cardsArray = cardsArray;
     // this.shuffle();
   }
