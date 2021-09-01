@@ -1,3 +1,66 @@
-body .canvas-container{position:absolute;display:flex;justify-content:center;top:10%;left:0;bottom:0;right:0;width:100%;height:100%;border-style:solid;border-width:1px;border-color:#000;background-color:#d3f6db}body .canvas-container canvas{display:flex;flex-wrap:wrap;margin-top:10%;height:70%;width:70%;justify-content:center;border-style:solid;border-width:1px;border-color:#fdfffc;background-color:#fff}body .canvas-container canvas:hover{cursor:pointer}body .canvas-container canvas div{border:1px solid #fdfffc;width:200px;height:200px}body div.time-reset{position:absolute;left:0;right:0;top:0;display:flex;height:100px;justify-content:space-around;align-items:center;background-color:#92d5e6}body div.time-reset #timer{color:#fff}body div.time-reset #reset{border-style:solid;border-width:2px;border-color:#fff;border-radius:4px;color:#fff;background-color:#772d8b;width:80px;height:50px}body div.time-reset #reset:hover{cursor:pointer;background:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3))}
-
-/*# sourceMappingURL=main.css.map*/
+/*!********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/styles/index.scss ***!
+  \********************************************************************************************************************************************/
+body .canvas-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 10%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  background-color: #D3F6DB;
+}
+body .canvas-container canvas {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10%;
+  height: 70%;
+  width: 70%;
+  justify-content: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #FDFFFC;
+  background-color: white;
+}
+body .canvas-container canvas:hover {
+  cursor: pointer;
+}
+body .canvas-container canvas div {
+  border: 1px solid #FDFFFC;
+  width: 200px;
+  height: 200px;
+}
+body div.time-reset {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  height: 100px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #92D5E6;
+}
+body div.time-reset #timer {
+  color: white;
+}
+body div.time-reset #reset {
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  border-radius: 4px;
+  color: white;
+  background-color: #772D8B;
+  width: 80px;
+  height: 50px;
+}
+body div.time-reset #reset:hover {
+  cursor: pointer;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+}

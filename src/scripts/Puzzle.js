@@ -45,9 +45,49 @@ export default class Puzzle {
 
   }
  
+  randomizeArr(array) {
+    let outerArr = [];
+    let innerArr = [];
+
+    for(let i = 0; i < 3; i++) {
+      outerArr.push[i];
+      innerArr.push[i];
+    }
+
+    var item = items[Math.floor(Math.random()*items.length)];
+
+    for(let i = 0; i < 3; i++) {
+      let ind1 = Math.floor(Math.random() * outerArr.length);
+      let ind2 = Math.floor(Math.random() * innerArr.length);
+
+      let num1 = outerArr[ind1];
+      let num2 = innerArr[ind2];
+
+      outerArr.splice(ind1, ind1);
+      innerArr.splice(ind2, ind2);
+    }
+
+
+
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      // let temp = array[i];
+      // array[i] = array[j];
+      // array[j] = temp;
+      for (let k = array.length - 1; k > 0; k--) {
+
+        let t = Math.floor(Math.random() * (k + 1));
+        let temp2 = array[i][k];
+        array[i][k] = array[j][t];
+        array[j][t] = temp2;
+        debugger
+      }
+    }
+
+    return array;
+  }
+
   drawGrid() {
-    
-    
     let space = this.img.width / 3;
     let end = this.img.height;
 
@@ -68,9 +108,10 @@ export default class Puzzle {
         cardsArray[i][j] = new Card(this.img, this.canvas, [i, j], [i, j])
       }
     }
-    
-    this.cardsArray = cardsArray;
-    this.shuffle();
+
+    this.cardsArray = this.randomizeArr(cardsArray);
+    // this.cardsArray = cardsArray;
+    // this.shuffle();
   }
 
   drawCards(){
@@ -87,7 +128,6 @@ export default class Puzzle {
     
     if(this.isSolved()){
 
-      debugger
       this.ctx.drawImage(window.img, 0, 0, window.img.width, window.img.height,
                      0, 0, this.canvas.width, this.canvas.height);
 

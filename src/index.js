@@ -18,7 +18,6 @@ function chooseImage(){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  
   const clock = new Clock();
   const canvas = document.getElementById('puzzle');
   const ctx = canvas.getContext("2d");
