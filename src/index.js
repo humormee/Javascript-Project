@@ -15,7 +15,13 @@ function chooseImage(){
   let img = new Image();
   img.setAttribute(`src`, `data:image/jpg;base64, ${pic}`);
   window.img = img;
+  img.onload = function() {
+    
+  }
+    // img.setAttribute(`src`, `data:image/jpg;base64, ${pic}`);
+  
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
   
@@ -29,11 +35,20 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
   chooseImage();
+
+  window.reset = function reload() {
+    chooseImage();
+    console.log('reset click event listener activated')
+    debugger
+    window.puzzle.setBoard();
+    window.clock.reset();
+  }
+
   let puzzle = new Puzzle(canvas, window.img);
   puzzle.drawCards();
   window.puzzle = puzzle;
   window.clock = clock;
-  
+
   canvas.addEventListener('click', function(e) {
 
     findClick(e);

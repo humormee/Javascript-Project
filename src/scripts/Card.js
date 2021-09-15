@@ -1,6 +1,10 @@
 export default class Card {
   constructor(img, canvasEl, currentIndex, baseIndex, isEmpty = false) {
-    
+    if(img.width === 0) {
+      debugger
+      location.reload();
+    }
+
     this.img = window.img;
     this.isEmtpy = isEmpty;
     this.canvasEl = canvasEl;
@@ -28,6 +32,8 @@ export default class Card {
 
   drawCard() {
    
+    
+
     let size = this.size
     let baseX = this.baseIndex[0];
     let baseY = this.baseIndex[1];
