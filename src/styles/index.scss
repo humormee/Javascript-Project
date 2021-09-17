@@ -1,5 +1,8 @@
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   .canvas-container {
   position: absolute;
   display: flex;
@@ -94,4 +97,14 @@ div.time-reset {
     height: 50px;
   }
 }
+.footer {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+    
 }
+}
+

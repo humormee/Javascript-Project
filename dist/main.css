@@ -1,6 +1,11 @@
 /*!********************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/styles/index.scss ***!
   \********************************************************************************************************************************************/
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 body .canvas-container {
   position: absolute;
   display: flex;
@@ -82,4 +87,12 @@ body div.time-reset #reset {
 body div.time-reset #reset:hover {
   cursor: pointer;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+body .footer {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
 }
