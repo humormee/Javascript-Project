@@ -97,14 +97,16 @@ div.time-reset {
     height: 50px;
   }
 }
-.footer {
+div.footer {
   height: 50px;
   width: 100%;
   position: absolute;
   bottom: 0;
   display: flex;
-  justify-content: center;
-    
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #92D5E6;
+  color: #772D8B;
 }
 }
 
