@@ -4,12 +4,14 @@ import Puzzle from "./scripts/Puzzle";
 import { findClick } from "./scripts/game";
 import { cute } from "./assets/images/cute";
 import { lizard } from "./assets/images/lizard";
-import { panda } from "./assets/images/panda";
-import { manatees } from "./assets/images/manatees";
+// import { panda } from "./assets/images/panda";
+import { new_panda } from "./assets/images/new_panda";
+import { doggo } from "./assets/images/doggo";
+// import { manatees } from "./assets/images/manatees";
 
 function chooseImage(){
   console.log("entered chooseImage function")
-  const imgArr = [cute, lizard, panda, manatees];
+  const imgArr = [cute, lizard, new_panda, doggo];
   let pic = imgArr[Math.floor(Math.random()*imgArr.length)];
   
   let img = new Image();

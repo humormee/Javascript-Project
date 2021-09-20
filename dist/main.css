@@ -29,6 +29,7 @@ body .canvas-container div {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 100px;
 }
 body .canvas-container div h4 {
   position: relative;
