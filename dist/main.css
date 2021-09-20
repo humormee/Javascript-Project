@@ -60,6 +60,9 @@ body .canvas-container canvas div {
   width: 200px;
   height: 200px;
 }
+body #puzzle {
+  margin-bottom: 200px;
+}
 body div.time-reset {
   position: absolute;
   left: 0;
@@ -89,13 +92,15 @@ body div.time-reset #reset:hover {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 }
 body div.footer {
-  height: 50px;
+  height: 80px;
   width: 100%;
   position: absolute;
+  left: 0;
   bottom: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   background-color: #92D5E6;
   color: #772D8B;
+  font-size: 40px;
 }

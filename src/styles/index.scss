@@ -60,6 +60,9 @@ body {
   }
   }
 
+  #puzzle {
+    margin-bottom: 200px;
+  }
 
 div.time-reset {
   position: absolute;
@@ -98,15 +101,17 @@ div.time-reset {
   }
 }
 div.footer {
-  height: 50px;
+  height: 80px;
   width: 100%;
   position: absolute;
+  left: 0;
   bottom: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   background-color: #92D5E6;
   color: #772D8B;
+  font-size: 40px;
 }
 }
 
