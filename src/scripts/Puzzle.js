@@ -87,7 +87,6 @@ export default class Puzzle {
     
     if(this.isSolved()){
 
-      debugger
       this.ctx.drawImage(window.img, 0, 0, window.img.width, window.img.height,
                      0, 0, this.canvas.width, this.canvas.height);
 
@@ -115,7 +114,6 @@ export default class Puzzle {
       this.cardsArray[clickLoc.x][clickLoc.y].currentIndex = this.emptyCard.currentIndex;
       
       this.emptyCard.currentIndex = [clickLoc.x, clickLoc.y];
-      console.log("empty next to click yep")
       
     }
     this.drawCards();
@@ -138,7 +136,6 @@ export default class Puzzle {
     })
   
     if (isSolved){
-      console.log("congrats you solved it!!")
       window.clock.stop();
     }
     

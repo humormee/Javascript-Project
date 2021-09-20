@@ -10,7 +10,6 @@ import { doggo } from "./assets/images/doggo";
 // import { manatees } from "./assets/images/manatees";
 
 function chooseImage(){
-  console.log("entered chooseImage function")
   const imgArr = [cute, lizard, new_panda, doggo];
   let pic = imgArr[Math.floor(Math.random()*imgArr.length)];
   
@@ -40,8 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.reset = function reload() {
     chooseImage();
-    console.log('reset click event listener activated')
-    debugger
     window.puzzle.setBoard();
     window.clock.reset();
   }
@@ -60,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   reset.addEventListener('click', function(e) {
     chooseImage();
-    console.log('reset click event listener activated')
     window.puzzle.setBoard();
     window.clock.reset();
     

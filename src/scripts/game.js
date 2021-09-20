@@ -13,10 +13,5 @@ export const findClick = function(e) {
       
     }
     
-    console.log(`clickLoc: ${clickLoc}`);
- 
-    console.log(`[rect.left, rect.top]: ${[e.offsetX, e.offsetY]}`);
-
-    
     window.puzzle.switchCards(clickLoc);
 }

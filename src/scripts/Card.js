@@ -1,7 +1,6 @@
 export default class Card {
   constructor(img, canvasEl, currentIndex, baseIndex, isEmpty = false) {
     if(img.width === 0) {
-      debugger
       location.reload();
     }
 
