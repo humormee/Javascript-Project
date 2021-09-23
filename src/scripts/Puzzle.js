@@ -22,7 +22,7 @@ export default class Puzzle {
   }
 
   shuffle() {
-    this.isShuffling = true;
+    // this.isShuffling = true;
     let clickArr = [
       {x: 0, y: 0},
       {x: 0, y: 1},
@@ -45,10 +45,6 @@ export default class Puzzle {
 
   }
  
-  newSuffle() {
-
-  }
-
   drawGrid() {
     
     
@@ -78,6 +74,9 @@ export default class Puzzle {
   }
 
   drawCards(){
+    if(this.isShuffling) {
+      return
+    }
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
     for(let i = 0; i < 3; i++) {
@@ -98,10 +97,7 @@ export default class Puzzle {
     
   }
 
-  swapCards(clickLoc) {
-
-  }
-  renderCards()
+  
   switchCards(clickLoc) {
     let clickedCard = this.cardsArray[clickLoc.x][clickLoc.y];
     let emptyPosX = this.emptyCard.currentIndex[0];
@@ -124,6 +120,7 @@ export default class Puzzle {
       this.emptyCard.currentIndex = [clickLoc.x, clickLoc.y];
       
     }
+
     this.drawCards();
 
   }
