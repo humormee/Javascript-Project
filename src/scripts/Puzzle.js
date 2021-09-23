@@ -45,6 +45,10 @@ export default class Puzzle {
 
   }
  
+  newSuffle() {
+
+  }
+
   drawGrid() {
     
     
@@ -94,6 +98,10 @@ export default class Puzzle {
     
   }
 
+  swapCards(clickLoc) {
+
+  }
+  renderCards()
   switchCards(clickLoc) {
     let clickedCard = this.cardsArray[clickLoc.x][clickLoc.y];
     let emptyPosX = this.emptyCard.currentIndex[0];
