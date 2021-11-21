@@ -38,6 +38,11 @@ export default class Card {
     let baseY = this.baseIndex[1];
     let i = this.currentIndex[0];
     let j = this.currentIndex[1];
+
+    // resets if img doesnt load properly
+    if(this.height === 0) {
+      window.reset()
+    }
     this.ctx.drawImage(this.img, baseX * this.width, baseY * this.height, this.width, this.height, i * size, j * size, size-1, size-1);
   }
 }

@@ -16,6 +16,7 @@ function chooseImage(){
   let img = new Image();
   img.setAttribute(`src`, `data:image/jpg;base64, ${pic}`);
   window.img = img;
+  console.log(img)
   img.onload = function() {
     
   }
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.reset = function reload() {
     chooseImage();
+    console.log(window.img)
     window.puzzle.setBoard();
     window.clock.reset();
   }
