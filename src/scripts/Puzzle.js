@@ -90,7 +90,7 @@ export default class Puzzle {
     }
     
     if(this.isSolved()){
-
+      
       this.ctx.drawImage(window.img, 0, 0, window.img.width, window.img.height,
                      0, 0, this.canvas.width, this.canvas.height);
 
@@ -101,7 +101,7 @@ export default class Puzzle {
   swapCards(clickLoc) {
 
   }
-  renderCards()
+  // renderCards()
   switchCards(clickLoc) {
     let clickedCard = this.cardsArray[clickLoc.x][clickLoc.y];
     let emptyPosX = this.emptyCard.currentIndex[0];
