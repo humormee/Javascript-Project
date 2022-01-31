@@ -1,6 +1,6 @@
 ## Background
 
-Slide-OH! is a sliding puzzle game. Sample images are broken up into the specified number of cards, and randomly shuffled. Players try to complete the puzzle in the least number of moves. Players have the ability to add filters to the image they are playing on.
+Slide-OH! is a sliding puzzle game. Sample images are broken up into the specified number of cards, and randomly shuffled. Players try to complete the puzzle in the least number of moves.
 
 
 ## Functionality & MVPs
