@@ -1,6 +1,6 @@
 ## Background
 
-Image Shift is a sliding puzzle game. Sample images are broken up into the specified number of cards, and randomly shuffled. Players try to complete the puzzle in the least number of moves. Players have the ability to add filters to the image they are playing on.
+Slide-OH! is a sliding puzzle game. Sample images are broken up into the specified number of cards, and randomly shuffled. Players try to complete the puzzle in the least number of moves.
 
 
 ## Functionality & MVPs
@@ -10,12 +10,7 @@ Users of the app will have the ability to:
 * view the images that are divided into many "cards" that compromise of the entire image
 * move cards around the board by switching places with the empty space
 * reset the cards so they are randomly shuffled in an m * m square
-* time themselves and keep track of their number of moves
-
-### Bonus:
-* play the sliding puzzle game with the edited version of the picture
-* compare their moves to an algorithm for finding the least number of moves
-* choose different color schemes of the picture
+* time themselves
 
 
 In addition, this project will include:
