@@ -4,10 +4,8 @@ import Puzzle from "./scripts/Puzzle";
 import { findClick } from "./scripts/game";
 import { cute } from "./assets/images/cute";
 import { lizard } from "./assets/images/lizard";
-// import { panda } from "./assets/images/panda";
 import { new_panda } from "./assets/images/new_panda";
 import { doggo } from "./assets/images/doggo";
-// import { manatees } from "./assets/images/manatees";
 
 function chooseImage(){
   const imgArr = [cute, lizard, new_panda, doggo];
@@ -19,7 +17,6 @@ function chooseImage(){
   img.onload = function() {
     
   }
-    // img.setAttribute(`src`, `data:image/jpg;base64, ${pic}`);
   
 }
 
