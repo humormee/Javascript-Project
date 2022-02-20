@@ -51,6 +51,7 @@ body {
     border-width: 3px;
     border-color: #FDFFFC;
     background-color: white;
+    z-index: 100;
     &:hover {
       cursor: pointer;
     }
@@ -81,7 +82,7 @@ div.time-reset {
   #timer {
     color: white;
   }
-  #reset {
+  #reset, #music {
     border-style: solid;
     border-width: 2px;
     border-color: white;

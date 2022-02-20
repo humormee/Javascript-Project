@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   reset.addEventListener('click', function(e) {
+    console.log('click')
     chooseImage();
     window.puzzle.setBoard();
     window.clock.reset();

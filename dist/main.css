@@ -53,6 +53,7 @@ body .canvas-container canvas {
   border-width: 3px;
   border-color: #FDFFFC;
   background-color: white;
+  z-index: 100;
 }
 body .canvas-container canvas:hover {
   cursor: pointer;
@@ -79,7 +80,7 @@ body div.time-reset {
 body div.time-reset #timer {
   color: white;
 }
-body div.time-reset #reset {
+body div.time-reset #reset, body div.time-reset #music {
   border-style: solid;
   border-width: 2px;
   border-color: white;
@@ -89,7 +90,7 @@ body div.time-reset #reset {
   width: 80px;
   height: 50px;
 }
-body div.time-reset #reset:hover {
+body div.time-reset #reset:hover, body div.time-reset #music:hover {
   cursor: pointer;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 }
