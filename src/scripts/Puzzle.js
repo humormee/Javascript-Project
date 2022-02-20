@@ -107,7 +107,6 @@ export default class Puzzle {
     let emptyPosX = this.emptyCard.currentIndex[0];
     let emptyPosY = this.emptyCard.currentIndex[1];
     
-    console.log('switch')
     if (clickLoc.x === emptyPosX && clickLoc.y === emptyPosY || this.isSolved()){
       return;
     }
